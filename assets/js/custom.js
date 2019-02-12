@@ -253,68 +253,6 @@ function topMovies() {
 	}
   )
 
-
-
-
-
-
-
-
-
-
- //  function topMovies() {
-	// tmdb.call('/movie/top_rated', {},
-	//   function(e) {
-	// 	var info = document.getElementById('info');
-	// 	info.innerHTML = '';
-	// 	var results = Object.keys(e.results);
-	// 	// console.log("Success: " + e);
-	// 	// console.log(e.results);
-	// 	for (var i = 0; i < e.results.length; i++) {
-	// 	  console.log(JSON.stringify(e.results[i]));
-	// 	  var show = document.createElement('div');
-	// 	  show.id = i;
-	// 	  var json = e.results[i];
-	// 	  var poster = tmdb.images_uri + tmdb.size + e.results[i].poster_path;
-	// 	  var name = e.results[i].title;
-	// 	  var name = e.results[i].release_date;
-	// 	  var vote = e.results[i].vote_average;
-	// 	  var img = new Image();
-	// 	  img.src = poster;
-	// 	  info.appendChild(show);
-	// 	  show.appendChild(img);
-	// 	  if (img.src === 'http://image.tmdb.org/t/p/w500null') {
-	// 		img.src = 'http://colouringbook.org/SVG/2011/COLOURINGBOOK.ORG/cartoon_tv_black_white_line_art_scalable_vector_graphics_svg_inkscape_adobe_illustrator_clip_art_clipart_coloring_book_colouring-1331px.png';
-	// 	  }
-	// 	  show.innerHTML += '<p>' + name + '</p>';
-	// 	  show.innerHTML += '<p>Emisión: ' + e.results[i].release_date + '</p>';
-	// 	  show.innerHTML += '<p>' + release_date + '</p>';
-	// 	  show.innerHTML += '<p>' + vote + '</p>';
-
-	// 	  function click() {
-	// 		var display = document.getElementById('display');
-	// 		display.innerHTML = '';
-	// 		//img.src = '';
-	// 		var i = this.id;
-	// 		console.log(i);
-	// 		var displayPoster = tmdb.images_uri + tmdb.size + e.results[i].poster_path;
-	// 		img.src = displayPoster;
-	// 		if (img.src === 'http://image.tmdb.org/t/p/w500null') {
-	// 		  img.src = 'http://colouringbook.org/SVG/2011/COLOURINGBOOK.ORG/cartoon_tv_black_white_line_art_scalable_vector_graphics_svg_inkscape_adobe_illustrator_clip_art_clipart_coloring_book_colouring-1331px.png';
-	// 		}
-	// 		display.appendChild(img);
-	// 		display.innerHTML += '<p>Emisión: ' + e.results[i].release_date + '</p>';
-	// 		display.innerHTML += '<p>Name: ' + e.results[i].title + '</p>';
-	// 		display.innerHTML += '<p>Description: ' + e.results[i].overview + '</p>';
-
-	// 	  };
-	// 	  show.addEventListener('click', click, false);
-	// 	};
-	//   },
-	//   function(e) {
-	// 	console.log("Error: " + e)
-	//   })
- //  }
 }
 
 function popular() {
