@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+	meta(charset="UTF-8")
+	title {{ site.title }}
+	link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css' integrity='sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS' crossorigin='anonymous')
+	link(rel='stylesheet' href='{{site.baseulr}}/assets/css/sass/dashboard.css')
+	link(rel='stylesheet' href='{{site.baseulr}}/assets/css/modal.css')
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+	script(src='{{site.baseulr}}/assets/js/modal.js')
+	script(src='{{site.baseulr}}/assets/js/custom.js')
+	link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.1/css/all.css' integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr' crossorigin='anonymous')
+	link(href='https://fonts.googleapis.com/css?family=Anonymous+Pro|Poppins' rel='stylesheet')
+body(onload='upcoming()')
+	#modal-container
+		.modal-background
+			.col-sm-6.col-xs-12.modals#display
+				svg.modal-svg(xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' preserveaspectratio='none')
+					rect(x='0' y='0' fill='none' width='226' height='162' rx='3' ry='3')
+
+	.container
+		| {% include nav.html %}
+	.container-fluid
+		.row.content
+			| {% include sidebar.html %}
+			main.col-md-9.ml-sm-auto.col-lg-10.px-4.role
+				// Movie Options
+				.container
+					//- #display.row
+					#info.row
+
+
+
+
+
+
+
+
+				//- .container
+				//- 	.row
+				//- 		| {% for post in site.posts %}
+				//- 		.col-3
+				//- 			.poster.card.text-white.d-flex
+				//- 				span.w-100.status
+				//- 					.m-2.primary {{ post.status }}
+				//- 				.poster__grad
+				//- 				.poster__img
+				//- 					img.card-img(src="{{ post.image }}", alt="")
+				//- 				.poster__info.align-self-end.w-100.p-2
+				//- 					h3.h4.poster__title.card-title {{ post.title }}
+				//- 					p.poster__text.m-0 {{ post.date }}
+				//- 			.poster__footer.row.mt-2
+				//- 					.col-3
+				//- 						a.btn.btn-secondary
+				//- 							i.fas.fa-ticket-alt
+				//- 					.col-9
+				//- 						a.btn.btn-primary.w-100 Ver Trailer
+				//- 		|   {% endfor %}

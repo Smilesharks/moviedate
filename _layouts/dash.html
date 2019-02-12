@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>{{ site.title }}</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="{{site.baseulr}}/assets/css/sass/dashboard.css"/>
+  <link rel="stylesheet" href="{{site.baseulr}}/assets/css/modal.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="{{site.baseulr}}/assets/js/modal.js"></script>
+  <script src="{{site.baseulr}}/assets/js/custom.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+  <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro|Poppins" rel="stylesheet"/>
+</head>
+<body onload="upcoming()">
+  <div id="modal-container">
+    <div class="modal-background">
+      <div class="col-sm-6 col-xs-12 modals" id="display">
+        <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveaspectratio="none">
+          <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="container">{% include nav.html %}</div>
+  <div class="container-fluid">
+    <div class="row content">{% include sidebar.html %}
+      <main class="col-md-9 ml-sm-auto col-lg-10 px-4 role">
+        <!-- Movie Options-->
+        <div class="container">
+          <div class="row" id="info"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
