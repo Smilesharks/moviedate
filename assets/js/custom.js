@@ -74,7 +74,7 @@ function search() {
 		console.log(JSON.stringify(e.results[i]));
 		var info = document.getElementById('info')
 		var show = document.createElement('div');
-		show.setAttribute("class", "col-3" );
+		show.setAttribute("class", "col-xl-3 col-sm-6 col-xs-12" );
 		show.id = i;
 		var json = e.results[i];
 		var poster = tmdb.images_uri + tmdb.size + e.results[i].poster_path;
@@ -202,7 +202,7 @@ function topMovies() {
 		console.log(JSON.stringify(e.results[i]));
 		var info = document.getElementById('info')
 		var show = document.createElement('div');
-		show.setAttribute("class", "col-3" );
+		show.setAttribute("class", "col-xl-3 col-sm-6 col-xs-12" );
 		show.id = i;
 		var json = e.results[i];
 		var poster = tmdb.images_uri + tmdb.size + e.results[i].poster_path;
@@ -281,7 +281,7 @@ function popular() {
 		console.log(JSON.stringify(e.results[i]));
 		var info = document.getElementById('info')
 		var show = document.createElement('div');
-		show.setAttribute("class", "col-3" );
+		show.setAttribute("class", "col-xl-3 col-sm-6 col-xs-12" );
 		show.id = i;
 		var json = e.results[i];
 		var poster = tmdb.images_uri + tmdb.size + e.results[i].poster_path;
@@ -294,7 +294,7 @@ function popular() {
 		if (img.src === 'http://image.tmdb.org/t/p/w500null') {
 		  img.src = 'http://colouringbook.org/SVG/2011/COLOURINGBOOK.ORG/cartoon_tv_black_white_line_art_scalable_vector_graphics_svg_inkscape_adobe_illustrator_clip_art_clipart_coloring_book_colouring-1331px.png';
 		}
-		show.innerHTML += '<div class="poster card text-white d-flex"><span class="w-100 status"><div class="m-2 primary">Estreno</div></span><div class="poster__grad"></div><div class="poster__img" style="filter: grayscale(1);background-image:url('+ poster +')"></div><div class="poster__info align-self-end w-100 p-2"><h3 class="h4 poster__title card-title">'+ e.results[i].title + '</h3><p class="poster__text m-0">' + vote + '</p></div></div><div class="poster__footer row mt-2 mb-4"><div class="col-3"><a class="btn btn-secondary"><i class="fas fa-ticket-alt"></i></a></div><div class="col-9"><a class="btn btn-primary w-100">Ver Trailer</a></div></div>';
+		show.innerHTML += '<div class="poster card text-white d-flex"><span class="w-100 status"><div class="m-2 primary">Estreno</div></span><div class="poster__grad"></div><div class="poster__img" style="filter: grayscale(1);background-image:url('+ poster +')"></div><div class="poster__info align-self-end w-100 p-2"><h3 class="h4 poster__title card-title">'+ e.results[i].title + '</h3><p class="poster__text m-0">' + vote + '</p></div></div><div class="poster__footer row mt-2 mb-4"><div class="col-3"><div class="btn btn-secondary"><i class="fas fa-ticket-alt"></i></div></div><div class="col-9"><a id="one" class="button btn btn-primary w-100">Ver Trailer</a></div></div>';
 
 		function click() {
 		  var display = document.getElementById('display');
@@ -348,7 +348,7 @@ function nowPlaying() {
 		console.log(JSON.stringify(e.results[i]));
 		var info = document.getElementById('info')
 		var show = document.createElement('div');
-		show.setAttribute("class", "col-3" );
+		show.setAttribute("class", "col-xl-3 col-sm-6 col-xs-12" );
 		show.id = i;
 		var json = e.results[i];
 		var poster = tmdb.images_uri + tmdb.size + e.results[i].poster_path;
@@ -422,6 +422,7 @@ function upcoming() {
 		var name = e.results[i].title;
 		var vote = e.results[i].vote_average;
 		var video = e.results[i].movie_id;
+		var estreno = e.results[i].release_date
 		var img = new Image();
 		// img.src = poster;
 		info.appendChild(show);
@@ -429,7 +430,7 @@ function upcoming() {
 		if (img.src === 'http://image.tmdb.org/t/p/w500null') {
 		  img.src = 'http://colouringbook.org/SVG/2011/COLOURINGBOOK.ORG/cartoon_tv_black_white_line_art_scalable_vector_graphics_svg_inkscape_adobe_illustrator_clip_art_clipart_coloring_book_colouring-1331px.png';
 		}
-		show.innerHTML += '<div class="poster card text-white d-flex"><span class="w-100 status"><div class="m-2 primary">Estreno</div></span><div class="poster__grad"></div><div class="poster__img" style="filter: grayscale(1);background-image:url('+ poster +')"></div><div class="poster__info align-self-end w-100 p-2"><h3 class="h4 poster__title card-title">'+ e.results[i].title + '</h3><p class="poster__text m-0">' + e.results[i].release_date + '</p></div></div><div class="poster__footer row mt-2 mb-4"><div class="col-3"><div class="btn btn-secondary"><i class="fas fa-ticket-alt"></i></div></div><div class="col-9"><a id="one" class="button btn btn-primary w-100">Ver Trailer</a></div></div>';
+		show.innerHTML += '<div class="poster card text-white d-flex"><span class="w-100 status"><div class="m-2 primary">Estreno</div></span><div class="poster__grad"></div><div class="poster__img" style="filter: grayscale(1);background-image:url('+ poster +')"></div><div class="poster__info align-self-end w-100 p-2"><h3 class="h4 poster__title card-title">'+ e.results[i].title + '</h3><p class="poster__text m-0">' + estreno + '</p></div></div><div class="poster__footer row mt-2 mb-4"><div class="col-3"><div class="btn btn-secondary"><i class="fas fa-ticket-alt"></i></div></div><div class="col-9"><a id="one" class="button btn btn-primary w-100">Ver Trailer</a></div></div>';
 		
 		function click() {
 		  var display = document.getElementById('display');
@@ -483,7 +484,7 @@ function tvPopular() {
 		console.log(JSON.stringify(e.results[i]));
 		var info = document.getElementById('info')
 		var show = document.createElement('div');
-		show.setAttribute("class", "col-3" );
+		show.setAttribute("class", "col-xl-3 col-sm-6 col-xs-12" );
 		show.id = i;
 		var json = e.results[i];
 		var poster = tmdb.images_uri + tmdb.size + e.results[i].poster_path;
@@ -496,7 +497,7 @@ function tvPopular() {
 		if (img.src === 'http://image.tmdb.org/t/p/w500null') {
 		  img.src = 'http://colouringbook.org/SVG/2011/COLOURINGBOOK.ORG/cartoon_tv_black_white_line_art_scalable_vector_graphics_svg_inkscape_adobe_illustrator_clip_art_clipart_coloring_book_colouring-1331px.png';
 		}
-		show.innerHTML += '<div class="poster card text-white d-flex"><span class="w-100 status"><div class="m-2 primary">Estreno</div></span><div class="poster__grad"></div><div class="poster__img" style="filter: grayscale(1);background-image:url('+ poster +')"></div><div class="poster__info align-self-end w-100 p-2"><h3 class="h4 poster__title card-title">'+ name + '</h3><p class="poster__text m-0">' + e.results[i].vote_average + '</p></div></div><div class="poster__footer row mt-2 mb-4"><div class="col-3"><a class="btn btn-secondary"><i class="fas fa-ticket-alt"></i></a></div><div class="col-9"><a class="btn btn-primary w-100">Ver Trailer</a></div></div>';
+		show.innerHTML += '<div class="poster card text-white d-flex"><span class="w-100 status"><div class="m-2 primary">Estreno</div></span><div class="poster__grad"></div><div class="poster__img" style="filter: grayscale(1);background-image:url('+ poster +')"></div><div class="poster__info align-self-end w-100 p-2"><h3 class="h4 poster__title card-title">'+ e.results[i].title + '</h3><p class="poster__text m-0">' + vote + '</p></div></div><div class="poster__footer row mt-2 mb-4"><div class="col-3"><div class="btn btn-secondary"><i class="fas fa-ticket-alt"></i></div></div><div class="col-9"><a id="one" class="button btn btn-primary w-100">Ver Trailer</a></div></div>';
 
 		function click() {
 		  var display = document.getElementById('display');
@@ -549,7 +550,7 @@ function tvTopRated() {
 		console.log(JSON.stringify(e.results[i]));
 		var info = document.getElementById('info')
 		var show = document.createElement('div');
-		show.setAttribute("class", "col-3" );
+		show.setAttribute("class", "col-xl-3 col-sm-6 col-xs-12" );
 		show.id = i;
 		var json = e.results[i];
 		var poster = tmdb.images_uri + tmdb.size + e.results[i].poster_path;
@@ -562,7 +563,7 @@ function tvTopRated() {
 		if (img.src === 'http://image.tmdb.org/t/p/w500null') {
 		  img.src = 'http://colouringbook.org/SVG/2011/COLOURINGBOOK.ORG/cartoon_tv_black_white_line_art_scalable_vector_graphics_svg_inkscape_adobe_illustrator_clip_art_clipart_coloring_book_colouring-1331px.png';
 		}
-		show.innerHTML += '<div class="poster card text-white d-flex"><span class="w-100 status"><div class="m-2 primary">Estreno</div></span><div class="poster__grad"></div><div class="poster__img" style="filter: grayscale(1);background-image:url('+ poster +')"></div><div class="poster__info align-self-end w-100 p-2"><h3 class="h4 poster__title card-title">'+ name + '</h3><p class="poster__text m-0">' + vote + '</p></div></div><div class="poster__footer row mt-2 mb-4"><div class="col-3"><a class="btn btn-secondary"><i class="fas fa-ticket-alt"></i></a></div><div class="col-9"><a class="btn btn-primary w-100">Ver Trailer</a></div></div>';
+		show.innerHTML += '<div class="poster card text-white d-flex"><span class="w-100 status"><div class="m-2 primary">Estreno</div></span><div class="poster__grad"></div><div class="poster__img" style="filter: grayscale(1);background-image:url('+ poster +')"></div><div class="poster__info align-self-end w-100 p-2"><h3 class="h4 poster__title card-title">'+ e.results[i].title + '</h3><p class="poster__text m-0">' + vote + '</p></div></div><div class="poster__footer row mt-2 mb-4"><div class="col-3"><div class="btn btn-secondary"><i class="fas fa-ticket-alt"></i></div></div><div class="col-9"><a id="one" class="button btn btn-primary w-100">Ver Trailer</a></div></div>';
 
 		function click() {
 		  var display = document.getElementById('display');
