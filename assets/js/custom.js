@@ -1,6 +1,6 @@
 (function() {	
   window.tmdb = {
-	"api_key": "a0a7e40dc8162ed7e37aa2fc97db5654",
+	"api_key": "be7463424e04e25654a938f9a9951509",
 	"base_uri": "https://api.themoviedb.org/3",
 	"images_uri": "http://image.tmdb.org/t/p",
 	"timeout": 5000,
@@ -430,7 +430,54 @@ function upcoming() {
 		if (img.src === 'http://image.tmdb.org/t/p/w500null') {
 		  img.src = 'http://colouringbook.org/SVG/2011/COLOURINGBOOK.ORG/cartoon_tv_black_white_line_art_scalable_vector_graphics_svg_inkscape_adobe_illustrator_clip_art_clipart_coloring_book_colouring-1331px.png';
 		}
-		show.innerHTML += '<div class="poster card text-white d-flex"><span class="w-100 status"><div class="m-2 primary">Estreno</div></span><div class="poster__grad"></div><div class="poster__img" style="filter: grayscale(1);background-image:url('+ poster +')"></div><div class="poster__info align-self-end w-100 p-2"><h3 class="h4 poster__title card-title">'+ e.results[i].title + '</h3><p class="poster__text m-0">' + estreno + '</p></div></div><div class="poster__footer row mt-2 mb-4"><div class="col-3"><div class="btn btn-secondary"><i class="fas fa-ticket-alt"></i></div></div><div class="col-9"><a id="one" class="button btn btn-primary w-100">Ver Trailer</a></div></div>';
+		show.innerHTML += '<div class="poster card text-white d-flex"><span class="w-100 status"><div class="clock m-2 primary"></div></span><div class="poster__grad"></div><div class="poster__img" style="filter: grayscale(1);background-image:url('+ poster +')"></div><div class="poster__info align-self-end w-100 p-2"><h3 class="h4 poster__title card-title">'+ e.results[i].title + '</h3><p class="poster__text m-0">' + estreno + '</p></div></div><div class="poster__footer row mt-2 mb-4"><div class="col-3"><div class="btn btn-secondary"><i class="fas fa-ticket-alt"></i></div></div><div class="col-9"><a id="one" class="button btn btn-primary w-100">Ver Trailer</a></div></div>';
+	    
+
+		var $clock = $('.clock'),
+		eventTime = moment('14-11-2019 08:30:00', 'DD-MM-YYYY HH:mm:ss').unix(),
+		currentTime = moment().unix(),
+		diffTime = eventTime - currentTime,
+		duration = moment.duration(diffTime * 1000, 'milliseconds'),
+		interval = 1000;
+		console.log(i);
+        // console.log(eventTime);
+		console.log(currentTime);
+		console.log(duration);
+
+		    // if time to countdown
+		    if(diffTime > 0) {
+
+		        // Show clock
+		        // $clock.show();
+
+		        var $d = $('<div class="days" ></div>').appendTo($clock),
+		        $h = $('<div class="hours" ></div>').appendTo($clock),
+		        $m = $('<div class="minutes" ></div>').appendTo($clock),
+		        $s = $('<div class="seconds" ></div>').appendTo($clock);
+
+		        setInterval(function(){
+
+		        	duration = moment.duration(duration.asMilliseconds() - interval, 'milliseconds');
+		        	var d = moment.duration(duration).days(),
+		        	h = moment.duration(duration).hours(),
+		        	m = moment.duration(duration).minutes(),
+		        	s = moment.duration(duration).seconds();
+
+		        	d = $.trim(d).length === 1 ? '0' + d : d;
+		        	h = $.trim(h).length === 1 ? '0' + h : h;
+		        	m = $.trim(m).length === 1 ? '0' + m : m;
+		        	s = $.trim(s).length === 1 ? '0' + s : s;
+
+		            // show how many hours, minutes and seconds are left
+					$d.text(d);
+					$h.text(h);
+					$m.text(m);
+					$s.text(s);
+
+		        }, interval);
+
+		    }
+
 		
 		function click() {
 		  var display = document.getElementById('display');
@@ -464,6 +511,7 @@ function upcoming() {
 		$( ".button" ).click(function() {
 			console.log( "You clicked a foo!" );
 		});
+
 		show.addEventListener('click', click, false);
 	  };
 	},
