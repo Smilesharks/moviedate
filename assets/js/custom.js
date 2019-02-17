@@ -42,9 +42,9 @@
   }
 })()
 
-window.addEventListener('keydown', function(e) {
-  handleKeyPress(e);
-}, false);
+// window.addEventListener('keydown', function(e) {
+//   handleKeyPress(e);
+// }, false);
 
 var input = document.getElementById('search');
 input.addEventListener('click', search, false);
