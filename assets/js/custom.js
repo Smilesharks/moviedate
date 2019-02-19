@@ -42,9 +42,11 @@
   }
 })()
 
-// window.addEventListener('keydown', function(e) {
-//   handleKeyPress(e);
-// }, false);
+
+
+window.addEventListener('keydown', function(e) {
+  handleKeyPress(e);
+}, false);
 
 var input = document.getElementById('search');
 input.addEventListener('click', search, false);
@@ -346,7 +348,7 @@ function nowPlaying() {
 	  console.log("Success: " + e);
 	  console.log(e.results);
 	  for (var i = 0; i < e.results.length; i++) {
-		console.log(JSON.stringify(e.results[i]));
+		// console.log(JSON.stringify(e.results[i]));
 		var info = document.getElementById('info')
 		var show = document.createElement('div');
 		show.setAttribute("class", "col-xl-3 col-sm-6 col-xs-12" );
@@ -410,8 +412,8 @@ function upcoming() {
 	  var info = document.getElementById('info');
 	  info.innerHTML = '';
 	  var results = Object.keys(e.results);
-	  console.log("Success: " + e);
-	  console.log(e.results);
+	  // console.log("Success: " + e);
+	  // console.log(e.results);
 	  for (var i = 0; i < e.results.length; i++) {
 		// console.log(JSON.stringify(e.results[i]));
 		var info = document.getElementById('info')
@@ -422,8 +424,9 @@ function upcoming() {
 		var poster = tmdb.images_uri + tmdb.size + e.results[i].poster_path;
 		var name = e.results[i].title;
 		var vote = e.results[i].vote_average;
+		var id = e.results[i].id;	
 		var video = e.results[i].movie_id;
-		var estreno = e.results[i].release_date
+		var estreno = e.results[i].release_date;
 		var img = new Image();
 		// img.src = poster;
 		info.appendChild(show);
@@ -431,7 +434,7 @@ function upcoming() {
 		if (img.src === 'http://image.tmdb.org/t/p/w500null') {
 		  img.src = 'http://colouringbook.org/SVG/2011/COLOURINGBOOK.ORG/cartoon_tv_black_white_line_art_scalable_vector_graphics_svg_inkscape_adobe_illustrator_clip_art_clipart_coloring_book_colouring-1331px.png';
 		}
-		show.innerHTML += '<div class="poster card text-white d-flex"><span class="w-100 status"><div data-countdown="' + estreno + '" class="m-2 primary"></div></span><div class="poster__grad"></div><div class="poster__img" style="filter: grayscale(1);background-image:url('+ poster +')"></div><div class="poster__info align-self-end w-100 p-2"><h3 class="h4 poster__title card-title">'+ e.results[i].title + '</h3><p class="poster__text m-0">' + estreno + '</p></div></div><div class="poster__footer row mt-2 mb-4"><div class="col-3"><div class="btn btn-secondary"><i class="fas fa-ticket-alt"></i></div></div><div class="col-9"><a id="one" class="button btn btn-primary w-100">Ver Trailer</a></div></div>';
+		show.innerHTML += '<div  id="one" class="button poster card text-white d-flex"><span class="w-100 status"><div data-countdown="' + estreno + '" class="m-2 primary"></div></span><div class="poster__grad"></div><div class="poster__img" style="filter: grayscale(1);background-image:url('+ poster +')"></div><div class="poster__info align-self-end w-100 p-2"><h3 class="h4 poster__title card-title">'+ e.results[i].title + '</h3><p class="poster__text m-0">' + estreno + '</p></div></div><div class="poster__footer row mt-2 mb-4"><div class="col-3"><div class="button btn btn-secondary"><i class="fas fa-ticket-alt"></i></div></div><div class="col-9"><a class="button btn btn-primary w-100">Ver Trailer</a></div></div><span id="output"></span>';
 	    
 			$('[data-countdown]').each(function() {
 			  var $this = $(this), finalDate = $(this).data('countdown');
@@ -451,8 +454,18 @@ function upcoming() {
 		  if (img.src === 'http://image.tmdb.org/t/p/w500null') {
 			img.src = 'http://colouringbook.org/SVG/2011/COLOURINGBOOK.ORG/cartoon_tv_black_white_line_art_scalable_vector_graphics_svg_inkscape_adobe_illustrator_clip_art_clipart_coloring_book_colouring-1331px.png';
 		  }
+			//Video yoputube
+			$.getJSON('https://api.themoviedb.org/3/movie/'+ id +'?api_key=94a2f36cd4e27626b6a7a07766a76196&append_to_response=videos', function (data) {
+				var videoid = data.videos.results[0].key;
+				console.log("ID: " + i);
+				$(".actualyoutube iframe").remove();
+				$('<iframe width="420" height="315" frameborder="0" allowfullscreen></iframe>')
+				.attr("src", "http://www.youtube.com/embed/" + videoid)
+				.appendTo(".actualyoutube");
+			});
 		  display.appendChild(img);
 		  display.innerHTML += '<h2>Name: ' + e.results[i].title + '</h2>';
+		  display.innerHTML += '<div class="actualyoutube"><iframe width="560" height="315" src="http://www.youtube.com/embed/VIDEO_ID_GOES_HERE" frameborder="0" allowfullscreen></iframe></div>';
 		  display.innerHTML += '<h4>Emisión: ' + e.results[i].release_date + '</h4>';
 		  display.innerHTML += '<h4  data-countdown=' + estreno + ' ></h4>';
 		  display.innerHTML += '<p>Description: ' + e.results[i].overview + '</p>';
