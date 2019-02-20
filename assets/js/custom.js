@@ -456,7 +456,7 @@ function upcoming() {
 			pathJson = tmdb.video_uri + id + '?api_key=94a2f36cd4e27626b6a7a07766a76196&append_to_response=videos'
 			// videoId = $.videos.results.[0].key
 			$.getJSON( pathJson, function(data) {
-				// videoId = $.videos.results.[0].key
+				videoId = e.results[i].videos[0].key
 				// .result').html('<p>' + data.videos.results.[0].key + '</p>'
 				// $('.result').html('<p>' + data.videos.results.[0].key + '</p>'
 				// + '<p>' + data.baz[1] + '</p>');
