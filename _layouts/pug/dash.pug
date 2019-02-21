@@ -10,7 +10,7 @@ head
 	//- script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/1.7.2/moment.min.js')
 	//- script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js')
 	//- script(src='{{site.baseulr}}/moviedate/assets/js/moment.js')
-	script(src='{{site.baseulr}}/moviedate/assets/js/custom.js')
+	script(src='{{site.baseulr}}/moviedate/assets/js/main.js')
 	script(src='{{site.baseulr}}/moviedate/assets/js/jquery.countdown.min.js')
 	link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.1/css/all.css' integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr' crossorigin='anonymous')
 	link(href='https://fonts.googleapis.com/css?family=Anonymous+Pro|Poppins' rel='stylesheet')
@@ -33,7 +33,7 @@ head
 		gtag('config', 'UA-89924603-1');
 	script.
 		(function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })()
-body(onload='upcoming()')
+body
 	#modal-container
 		.modal-background
 			.col-sm-6.col-xs-12.modals#display
@@ -50,3 +50,4 @@ body(onload='upcoming()')
 				.container.row
 				.container
 					#info.row
+
