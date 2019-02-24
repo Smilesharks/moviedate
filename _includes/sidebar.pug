@@ -1,21 +1,17 @@
 nav.collapse.bd-links.col-md-2.d-none.d-md-block.bg-dark.text-light.sidebar
   .sidebar-sticky
     h6.sidebar-heading.d-flex.justify-content-between.align-items-center.px-3.mt-4.mb-1.text-muted
-      span Peliculas    
+      span Movies    
     ul.nav.flex-column.movieOptions
       li.nav-item
-        a.nav-link.active(href='#')(data-action='upcoming')
-          svg.feather.feather-home(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
-            path(d='M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z')
-            polyline(points='9 22 9 12 15 12 15 22')
-          |               Próximamente 
+        a.nav-link(href='#')(data-action='upcoming')
+          img.invert(src='{{site.baseulr}}/moviedate/assets/img/film.svg' width='24' height='24' alt='')
+          |               Upcoming 
           span.sr-only (current)
       li.nav-item
         a.nav-link(href='#')(data-action='nowplaying')
-          svg.feather.feather-file(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
-            path(d='M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z')
-            polyline(points='13 2 13 9 20 9')
-          |               En Cartelera
+          img.invert(src='{{site.baseulr}}/moviedate/assets/img/ticket.svg' width='24' height='24' alt='')
+          |               Now Playing
       //- li.nav-item
       //-   a.nav-link(href='#')(onclick='popular()')
       //-     svg.feather.feather-shopping-cart(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
@@ -46,20 +42,22 @@ nav.collapse.bd-links.col-md-2.d-none.d-md-block.bg-dark.text-light.sidebar
       //-       line(x1='6' y1='20' x2='6' y2='14')
       //-     |               Votadas TV
     h6.sidebar-heading.d-flex.justify-content-between.align-items-center.px-3.mt-4.mb-1.text-muted
-      span Últimas agregadas
+      span Info
       a.d-flex.align-items-center.text-muted(href='#')
-        svg.feather.feather-plus-circle(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
-          circle(cx='12' cy='12' r='10')
-          line(x1='12' y1='8' x2='12' y2='16')
-          line(x1='8' y1='12' x2='16' y2='12')
     ul.nav.flex-column.mb-2
       li.nav-item
-        a.nav-link(href='#')
-          svg.feather.feather-file-text(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
-            path(d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z')
-            polyline(points='14 2 14 8 20 8')
-            line(x1='16' y1='13' x2='8' y2='13')
-            line(x1='16' y1='17' x2='8' y2='17')
-            polyline(points='10 9 9 9 8 9')
-          |               Current month
-      
+        a.nav-link.typeform-share(href='https://arielcerda.typeform.com/to/r5W3dV' data-mode='drawer_right' data-submit-close-delay='5' target='_blank')
+          img.invert(src='{{site.baseulr}}/moviedate/assets/img/envelope-alt.svg' width='24' height='24' alt='')
+          |               What's coming?
+      li.nav-item
+        a.nav-link.bmc-button(target='_blank' href='https://www.buymeacoffee.com/xvjL2lU86')
+          img(src='https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg' alt='Buy me a Coffe')
+          |               Buy me a Coffe
+
+          
+
+
+    ul.nav.flex-column.mb-2.tmdb
+      li.nav-item
+        a.nav-link(href='https://www.themoviedb.org/')  
+          img(src='{{site.baseulr}}/moviedate/assets/img/tmdb.svg' height='35' alt='')

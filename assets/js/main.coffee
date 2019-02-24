@@ -62,7 +62,8 @@ App =
                 poster_url = "#{@tmdb.images_uri}#{@tmdb.image_size}#{movie.poster_path}"
             else
                 poster_url = 'http://colouringbook.org/SVG/2011/COLOURINGBOOK.ORG/cartoon_tv_black_white_line_art_scalable_vector_graphics_svg_inkscape_adobe_illustrator_clip_art_clipart_coloring_book_colouring-1331px.png'
-            movie_item = $('<div/>').addClass('col-xl-3 col-sm-12 col-xs-12')
+            date_reminder = 'http://www.google.com/calendar/event?action=TEMPLATE&dates=#{release_date}%2FT010000Z&text=#{title}&location=&details='
+            movie_item = $('<div/>').addClass('col-xl-3 col-sm-12 col-xs-12 movie-item')
             movie_item_inner = $('<div/>').addClass('button poster card text-white d-flex movie-card').attr('data-movie-id', movie.id)
             if show_countdown is true then movie_item_inner.append $('<span/>').addClass('w-100 status').append $('<div/>').attr('data-countdown', movie.release_date).addClass('m-2 primary')
             movie_item_inner.append $('<div/>').addClass('poster__grad')
@@ -72,8 +73,9 @@ App =
             poster_info.append $('<p/>').addClass('poster__text m-0').text movie.release_date
             movie_item_inner.append poster_info
             poster_footer = $('<div/>').addClass('poster__footer poster__footer row mt-2 mb-4')
+            # poster_footer.append $('<div/>').addClass('col-3').append $('<div/>').addClass('button btn btn-secondary').append $('<i/>').addClass('fas fa-calendar-plus')
             poster_footer.append $('<div/>').addClass('col-3').append $('<div/>').addClass('button btn btn-secondary').append $('<i/>').addClass('fas fa-ticket-alt')
-            poster_footer.append $('<div/>').addClass('col-9').append $('<a/>').addClass('trailer button btn btn-primary w-100').text 'Ver Trailer'
+            poster_footer.append $('<div/>').addClass('col-9').append $('<a/>').addClass('trailer button btn btn-primary w-100').text 'Trailer'
             movie_item.append movie_item_inner
             movie_item.append poster_footer
             $('#info').append movie_item
@@ -96,14 +98,16 @@ App =
                 $('.trailer').addClass('bingo').attr('data-lity','#{video_link}')
             else
                 poster_url = 'http://colouringbook.org/SVG/2011/COLOURINGBOOK.ORG/cartoon_tv_black_white_line_art_scalable_vector_graphics_svg_inkscape_adobe_illustrator_clip_art_clipart_coloring_book_colouring-1331px.png'
-            image = $('<div/>').append $('<img/>').attr('src', poster_url)
-            $('#display').append image
-            info = $('<div/>')
+            image = $('<div/>').append $('<img/>').addClass('mr-3').attr('src', poster_url)
+            $('#display').append image.addClass('mr-3')
+            info = $('<div/>').addClass('media-body')
             # info.append $('<div/>').addClass('actualyoutube').html("<iframe width='560' height='315' src='#{video_link}' frameborder='0' allowfullscreen></iframe>")
             $('.trailer').addClass('bingo').attr('data-lity', '').attr('href', video_link)
-            info.append $('<h4/>').text "Emisión: #{data.release_date}"
-            info.append $('<h4/>').attr('data-countdown', data.release_date)
-            info.append $('<p/>').text "Descripcion: #{data.overview}"
+            info.append $('<h2/>').addClass('mt-5').text "#{data.title}"
+            info.append $('<h4/>').addClass('bingo').text "Release date: #{data.release_date}"
+            info.append $('<h5/>').attr('data-countdown', data.release_date)
+            info.append $('<p/>').addClass('bingo').text "Description: #{data.overview}"
+            # info.append $('<a/>').addClass('btn btn-primary').attr('href', video_link).text "Trailer"
             $('#display').append info
             $('#modal-container').removeAttr('class').addClass('one')
             $('body').addClass('modal-active')
@@ -114,7 +118,7 @@ App =
         for element in $('[data-countdown]')
             final_date = $(element).attr('data-countdown')
             $(element).countdown final_date, (event) ->
-                $(element).html event.strftime('%D días %H:%M:%S')
+                $(element).html event.strftime('%D Days %H:%M:%S')
 
 $ ->
   App.init()
