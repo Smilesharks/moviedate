@@ -25,12 +25,10 @@ head
 	link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css' integrity='sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS' crossorigin='anonymous')
 	link(rel='stylesheet' href='{{site.baseulr}}/moviedate/assets/css/sass/dashboard.css')
 	link(rel='stylesheet' href='{{site.baseulr}}/moviedate/assets/css/modal.css')
-	script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
 	
 	link(rel='stylesheet' href='{{site.baseulr}}/moviedate/assets/css/lity.min.css')
 	script(src='{{site.baseulr}}/moviedate/assets/js/lity.min.js')
-	
-	script(src='{{site.baseulr}}/moviedate/assets/js/bootstrap.bundle.min.js')
 
 	script(src='{{site.baseulr}}/moviedate/assets/js/main.js')
 	script(src='{{site.baseulr}}/moviedate/assets/js/jquery.countdown.min.js')
@@ -59,30 +57,19 @@ head
 body
 	#modal-container
 		.modal-background
-			.col-sm-12.col-xs-12.col-xl-8.modals
+			.col-sm-12.col-xs-12.col-xl-6.modals
 				#display.media.my-3
 			
 				svg.modal-svg(xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' preserveaspectratio='none')
 					rect(x='0' y='0' fill='none' width='226' height='162' rx='3' ry='3')
 
-	.container.d-flex
+	.container
 		| {% include nav.html %}
-	.container-fluid#wrapper
+	.container-fluid
 		.row.content
 			| {% include sidebar.html %}
-			main.ml-sm-auto.col-md-10.col-lg-10.role#page-content-wrapper
+			main.col-md-9.ml-sm-auto.col-lg-10.px-4.role
 				// Movie Options
 				.container.row
 				.container
 					#info.row
-script(type='text/javascript').
-	$("#menu-toggle").click(function(e) {
-		e.preventDefault();
-		$("#wrapper").toggleClass("toggled");
-		console.log("clock");
-	});
-	$(".nav-close").click(function(e) {
-		e.preventDefault();
-		$("#wrapper").toggleClass("toggled");
-		console.log("clock");
-	});

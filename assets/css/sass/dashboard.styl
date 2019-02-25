@@ -4,7 +4,7 @@ $secondary = #393335
 $ss = #4fef64
 // *
 //   border 1px solid red
-@import "simple-sidebar.styl"
+// @import "../modal.css"
 body
   font-family: 'Anonymous Pro', monospace;
   background-color $negro
@@ -74,7 +74,7 @@ a
 
 @media (min-width: 768px)
   .role
-    padding-top: 100px
+    padding-top: 88px
     // Space for fixed navbar
 
 .btn-primary, .primary
@@ -90,9 +90,6 @@ a
   &:hover
     background-color $ss
     color $negro !important
-  &:active
-    background-color $ss
-    color white
 
 .movie-item
   &:hover
@@ -178,7 +175,7 @@ a
 .tmdb
     position: absolute;
     bottom: 0;
-    margin-bottom: 1.5rem!important;
+    margin-bottom: 3.5rem!important;
 .invert
   filter: invert(1);
 // .actualyoutube
@@ -192,20 +189,3 @@ a
 //     left: 0
 //     width: 100%
 //     height: 100%
-@media (max-width: 768px)
-  .role
-    padding-top: 175px !important
-  #search
-    display none
-  .modals
-    .media
-      display block
-      .mr-3
-        img
-          height 100px!important;
-          width auto !important;
-      iframe
-        display: none;
-@media (min-width: 767px)
-  #menu-toggle
-    display none
