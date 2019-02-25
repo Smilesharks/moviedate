@@ -1,0 +1,74 @@
+
+#sidebar-wrapper.collapse.bd-links.col-md-2.d-none.d-block.bg-dark.text-light.sidebar
+  .sidebar-sticky
+    h6.sidebar-heading.d-flex.justify-content-between.align-items-center.px-3.mt-4.mb-1.text-muted
+      span Movies    
+    ul.nav.flex-column.movieOptions
+      li.nav-item.nav-close
+        a.nav-link(href='#')(data-action='upcoming')
+          img.invert(src='{{site.baseulr}}/moviedate/assets/img/film.svg' width='24' height='24' alt='')
+          |               Upcoming 
+          span.sr-only (current)
+      li.nav-item.nav-close
+        a.nav-link(href='#')(data-action='nowplaying')
+          img.invert(src='{{site.baseulr}}/moviedate/assets/img/ticket.svg' width='24' height='24' alt='')
+          |               Now Playing
+      //- li.nav-item
+      //-   a.nav-link(href='#')(onclick='popular()')
+      //-     svg.feather.feather-shopping-cart(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+      //-       circle(cx='9' cy='21' r='1')
+      //-       circle(cx='20' cy='21' r='1')
+      //-       path(d='M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6')
+      //-     |               Populares
+      //- li.nav-item
+      //-   a.nav-link(href='#')(onclick='topMovies()')
+      //-     svg.feather.feather-users(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+      //-       path(d='M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2')
+      //-       circle(cx='9' cy='7' r='4')
+      //-       path(d='M23 21v-2a4 4 0 0 0-3-3.87')
+      //-       path(d='M16 3.13a4 4 0 0 1 0 7.75')
+      //-     |               Mas Votadas
+      //- li.nav-item
+      //-   a.nav-link(href='#')(onclick='tvPopular()')
+      //-     svg.feather.feather-bar-chart-2(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+      //-       line(x1='18' y1='20' x2='18' y2='10')
+      //-       line(x1='12' y1='20' x2='12' y2='4')
+      //-       line(x1='6' y1='20' x2='6' y2='14')
+      //-     |               Populares TV
+      //- li.nav-item
+      //-   a.nav-link(href='#')(onclick='tvTopRated()')
+      //-     svg.feather.feather-bar-chart-2(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+      //-       line(x1='18' y1='20' x2='18' y2='10')
+      //-       line(x1='12' y1='20' x2='12' y2='4')
+      //-       line(x1='6' y1='20' x2='6' y2='14')
+      //-     |               Votadas TV
+    h6.sidebar-heading.d-flex.justify-content-between.align-items-center.px-3.mt-4.mb-1.text-muted
+      span Info
+      a.d-flex.align-items-center.text-muted(href='#')
+    ul.nav.flex-column.mb-2
+      li.nav-item
+        a.nav-link.typeform-share(href='https://arielcerda.typeform.com/to/r5W3dV' data-mode='drawer_right' data-submit-close-delay='5' target='_blank')
+          img.invert(src='{{site.baseulr}}/moviedate/assets/img/envelope-alt.svg' width='24' height='24' alt='')
+          |               What's coming?
+      li.nav-item
+        a.nav-link.bmc-button(target='_blank' href='https://www.buymeacoffee.com/xvjL2lU86')
+          img(src='https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg' alt='Buy me a Coffe')
+          |               Buy me a Coffe
+
+          
+
+
+    ul.nav.flex-column.mb-2.tmdb
+      li.nav-item
+        a.nav-link(href='https://www.themoviedb.org/')  
+          img(src='{{site.baseulr}}/moviedate/assets/img/tmdb.svg' height='35' alt='')
+
+      li.nav-item
+        p.nav-link
+          i.fa.fa-code.foot-icon.mr-2(aria-hidden='true')
+          | Made with 
+          span &#x2764;&#xFE0F;
+          |  by 
+          a(href='https://twitter.com/SmileSharks') Ariel
+          // 
+          | & Friends.

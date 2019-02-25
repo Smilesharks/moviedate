@@ -68,6 +68,7 @@ App =
                 poster_url = "#{@tmdb.images_uri}#{@tmdb.image_size}#{movie.poster_path}"
             else
                 poster_url = 'http://lorempixel.com/output/animals-q-c-640-480-10.jpg'
+            date_reminder = 'http://www.google.com/calendar/event?action=TEMPLATE&dates=#{release_date}%#{release_date}&text=#{title}&location=&details='
             movie_item = $('<div/>').addClass('col-sm-12 col-xs-12 col-md-6 col-xl-3 movie-item')
             movie_item_inner = $('<div/>').addClass('button poster card text-white d-flex movie-card').attr('data-movie-id', movie.id)
             if show_countdown is true then movie_item_inner.append $('<span/>').addClass('w-100 status').append $('<div/>').attr('data-countdown', movie.release_date).addClass('m-2 primary')

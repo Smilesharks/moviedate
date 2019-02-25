@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "Irom Man"
+date:   2019-02-02 22:24:57 +1300
+categories: estreno superhero
+status: Estreno
+image: "https://image.tmdb.org/t/p/w1280/s7hV8HFh7w2EZ4GK5EiltRVvWJA.jpg"
+
+---
+Superman ha muerto y el mundo entero está de luto... ¡pero Metropolis sigue necesitando a un defensor! ¿Quién será el sustituto del kryptoniano? ¿Superboy, el Hombre de Acero, o tal vez Superman Cíborg? Mientras tanto, algo extraño pasa en la Fortaleza de la Soledad... La saga que empezó en La muerte de Superman y Un mundo sin Superman continúa en un volumen repleto de sorpresas realizado por autores como Dan Jurgens (Batman del Futuro), Karl Kesel (Harley Quinn: Preludios y chistes malos), Tom Grummett (Astro City) o Jackson Guice (DC Un Millón).
+
+{% highlight ruby %}
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=> prints 'Hi, Tom' to STDOUT.
+{% endhighlight %}
+
+Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/

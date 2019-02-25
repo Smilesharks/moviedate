@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <title>{{ site.title }}</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="{{site.baseulr}}/moviedate/assets/css/sass/dashboard.css"/>
+  <link rel="stylesheet" href="{{site.baseulr}}/moviedate/assets/css/modal.css"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="{{site.baseulr}}/moviedate/assets/css/lity.min.css"/>
+  <script src="{{site.baseulr}}/moviedate/assets/js/lity.min.js"></script>
+  <script src="{{site.baseulr}}/moviedate/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="{{site.baseulr}}/moviedate/assets/js/main.js"></script>
+  <script src="{{site.baseulr}}/moviedate/assets/js/jquery.countdown.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+  <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro|Poppins" rel="stylesheet"/>
+  <!-- Global site tag (gtag.js) - Google Analytics-->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-89924603-1"></script>
+  <!-- Hotjar Tracking Code for https://smilesharks.github.io/moviedate/dash/-->
+  <script>
+    (function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:1207788,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-89924603-1');
+  </script>
+  <script>(function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })()</script>
+</head>
+<body>
+  <div id="modal-container">
+    <div class="modal-background">
+      <div class="col-sm-12 col-xs-12 col-xl-8 modals">
+        <div class="media my-3" id="display"></div>
+        <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveaspectratio="none">
+          <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="container d-flex">{% include nav.html %}</div>
+  <div class="container-fluid" id="wrapper">
+    <div class="row content">{% include sidebar.html %}
+      <main class="ml-sm-auto col-md-10 col-lg-10 role" id="page-content-wrapper">
+        <!-- Movie Options-->
+        <div class="container row"></div>
+        <div class="container">
+          <div class="row" id="info"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+  $("#menu-toggle").click(function(e) {
+  	e.preventDefault();
+  	$("#wrapper").toggleClass("toggled");
+  	console.log("clock");
+  });
+  $(".nav-close").click(function(e) {
+  	e.preventDefault();
+  	$("#wrapper").toggleClass("toggled");
+  	console.log("clock");
+  });
+</script>
