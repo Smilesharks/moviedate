@@ -4,40 +4,20 @@ head
 	meta(charset="UTF-8")
 	meta(http-equiv='X-UA-Compatible' content='ie=edge')
 	meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
-<<<<<<< HEAD:pug/index.pug
 	title MovieDate - Premiere Reminder
-	meta(name='Description' content='Reminder of how much time is left for the premiere of your next favorite movie.')
-	meta(name='Keywords' content='movie')
 	link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css' integrity='sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS' crossorigin='anonymous')
-	link(rel='stylesheet' href='moviedate/assets/css/sass/dashboard.css')
-	link(rel='stylesheet' href='moviedate/assets/css/modal.css')
+	link(rel='stylesheet' href='/assets/css/sass/dashboard.css')
+	link(rel='stylesheet' href='/assets/css/modal.css')
 	script(src='https://code.jquery.com/jquery-3.3.1.min.js')
 	
-	link(rel='stylesheet' href='moviedate/assets/css/lity.min.css')
-	script(src='moviedate/assets/js/lity.min.js')
+	link(rel='stylesheet' href='/assets/css/lity.min.css')
+	script(src='/assets/js/lity.min.js')
 	
-	script(src='moviedate/assets/js/bootstrap.bundle.min.js')
+	script(src='/assets/js/bootstrap.bundle.min.js')
 
-<<<<<<< HEAD:_layouts/pug/dash.pug
-	script(src='/moviedate/assets/js/main.js')
-	script(src='/moviedate/assets/js/jquery.countdown.min.js')
-=======
-	title {{ site.title }}
-	link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css' integrity='sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS' crossorigin='anonymous')
-	link(rel='stylesheet' href='{{site.baseulr}}/moviedate/assets/css/sass/dashboard.css')
-	link(rel='stylesheet' href='{{site.baseulr}}/moviedate/assets/css/modal.css')
-	script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
-	
-	link(rel='stylesheet' href='{{site.baseulr}}/moviedate/assets/css/lity.min.css')
-	script(src='{{site.baseulr}}/moviedate/assets/js/lity.min.js')
+	script(src='/assets/js/main.js')
+	script(src='/assets/js/jquery.countdown.min.js')
 
-	script(src='{{site.baseulr}}/moviedate/assets/js/main.js')
-	script(src='{{site.baseulr}}/moviedate/assets/js/jquery.countdown.min.js')
->>>>>>> parent of 596ade1... No Jekyll:_layouts/pug/dash.pug
-=======
-	script(src='moviedate/assets/js/main.js')
-	script(src='moviedate/assets/js/jquery.countdown.min.js')
->>>>>>> parent of 634b18c... urls:pug/index.pug
 	link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.1/css/all.css' integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr' crossorigin='anonymous')
 	link(href='https://fonts.googleapis.com/css?family=Anonymous+Pro|Poppins' rel='stylesheet')
 	// Global site tag (gtag.js) - Google Analytics
@@ -68,13 +48,24 @@ body
 				svg.modal-svg(xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' preserveaspectratio='none')
 					rect(x='0' y='0' fill='none' width='226' height='162' rx='3' ry='3')
 
-	.container
-		| {% include nav.html %}
-	.container-fluid
+	.container.d-flex
+		include nav.pug
+	.container-fluid#wrapper
 		.row.content
-			| {% include sidebar.html %}
-			main.col-md-9.ml-sm-auto.col-lg-10.px-4.role
+			include sidebar.pug
+			main.ml-sm-auto.col-md-10.col-lg-10.role#page-content-wrapper
 				// Movie Options
 				.container.row
 				.container
 					#info.row
+script(type='text/javascript').
+	$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+		console.log("clock");
+	});
+	$(".nav-close").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+		console.log("click");
+	});

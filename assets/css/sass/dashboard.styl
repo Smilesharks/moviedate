@@ -5,6 +5,7 @@ $ss = #4fef64
 // *
 //   border 1px solid red
 // @import "../modal.css"
+@import "simple-sidebar.styl"
 body
   font-family: 'Anonymous Pro', monospace;
   background-color $negro
@@ -189,3 +190,20 @@ a
 //     left: 0
 //     width: 100%
 //     height: 100%
+@media (max-width: 768px)
+  .role
+    padding-top: 175px !important
+  #search
+    display none
+  .modals
+    .media
+      display block
+      .mr-3
+        img
+          height 100px!important;
+          width auto !important;
+      iframe
+        display: none;
+@media (min-width: 767px)
+  #menu-toggle
+    display none

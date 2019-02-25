@@ -13,6 +13,12 @@ App =
     set_handlers: () ->
         $('body').on 'click', '.movie-card', (e) =>
             @load_movie_info $(e.currentTarget).attr('data-movie-id')
+        # Link Trailer
+        $('body').on 'click', '.trailer', (e) =>
+            @load_movie_info $(e.currentTarget).attr('href', '#{data.video_link}').attr('data-lity', '')
+        # Link Google calenda
+        $('body').on 'click', '.trailer', (e) =>
+            @load_movie_info $(e.currentTarget).attr('src', '#{data.video_link}')
 
         $('body').on 'click', '#modal-container', (e) =>
             $(e.currentTarget).addClass('out')
@@ -61,9 +67,8 @@ App =
             if movie.poster_path?
                 poster_url = "#{@tmdb.images_uri}#{@tmdb.image_size}#{movie.poster_path}"
             else
-                poster_url = 'http://colouringbook.org/SVG/2011/COLOURINGBOOK.ORG/cartoon_tv_black_white_line_art_scalable_vector_graphics_svg_inkscape_adobe_illustrator_clip_art_clipart_coloring_book_colouring-1331px.png'
-            date_reminder = 'http://www.google.com/calendar/event?action=TEMPLATE&dates=#{release_date}%2FT010000Z&text=#{title}&location=&details='
-            movie_item = $('<div/>').addClass('col-xl-3 col-sm-12 col-xs-12 movie-item')
+                poster_url = 'http://lorempixel.com/output/animals-q-c-640-480-10.jpg'
+            movie_item = $('<div/>').addClass('col-sm-12 col-xs-12 col-md-6 col-xl-3 movie-item')
             movie_item_inner = $('<div/>').addClass('button poster card text-white d-flex movie-card').attr('data-movie-id', movie.id)
             if show_countdown is true then movie_item_inner.append $('<span/>').addClass('w-100 status').append $('<div/>').attr('data-countdown', movie.release_date).addClass('m-2 primary')
             movie_item_inner.append $('<div/>').addClass('poster__grad')
@@ -95,13 +100,13 @@ App =
                 video_link = ''
             if data.poster_path?
                 poster_url = "#{@tmdb.images_uri}#{@tmdb.image_size}#{data.poster_path}"
-                $('.trailer').addClass('bingo').attr('data-lity','#{video_link}')
+                # $('.trailer').addClass('bingo').attr('data-lity','#{video_link}')
             else
-                poster_url = 'http://colouringbook.org/SVG/2011/COLOURINGBOOK.ORG/cartoon_tv_black_white_line_art_scalable_vector_graphics_svg_inkscape_adobe_illustrator_clip_art_clipart_coloring_book_colouring-1331px.png'
+                poster_url = 'http://lorempixel.com/output/animals-q-c-640-480-10.jpg'
             image = $('<div/>').append $('<img/>').addClass('mr-3').attr('src', poster_url)
             $('#display').append image.addClass('mr-3')
             info = $('<div/>').addClass('media-body')
-            # info.append $('<div/>').addClass('actualyoutube').html("<iframe width='560' height='315' src='#{video_link}' frameborder='0' allowfullscreen></iframe>")
+            info.append $('<div/>').addClass('actualyoutube').html("<iframe width='560' height='315' src='#{video_link}' frameborder='0' allowfullscreen></iframe>")
             $('.trailer').addClass('bingo').attr('data-lity', '').attr('href', video_link)
             info.append $('<h2/>').addClass('mt-5').text "#{data.title}"
             info.append $('<h4/>').addClass('bingo').text "Release date: #{data.release_date}"
