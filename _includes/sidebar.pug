@@ -1,14 +1,15 @@
-nav.collapse.bd-links.col-md-2.d-none.d-md-block.bg-dark.text-light.sidebar
+
+#sidebar-wrapper.collapse.bd-links.col-md-2.d-none.d-block.bg-dark.text-light.sidebar
   .sidebar-sticky
     h6.sidebar-heading.d-flex.justify-content-between.align-items-center.px-3.mt-4.mb-1.text-muted
       span Movies    
     ul.nav.flex-column.movieOptions
-      li.nav-item
+      li.nav-item.nav-close
         a.nav-link(href='#')(data-action='upcoming')
           img.invert(src='{{site.baseulr}}/moviedate/assets/img/film.svg' width='24' height='24' alt='')
           |               Upcoming 
           span.sr-only (current)
-      li.nav-item
+      li.nav-item.nav-close
         a.nav-link(href='#')(data-action='nowplaying')
           img.invert(src='{{site.baseulr}}/moviedate/assets/img/ticket.svg' width='24' height='24' alt='')
           |               Now Playing
@@ -61,3 +62,13 @@ nav.collapse.bd-links.col-md-2.d-none.d-md-block.bg-dark.text-light.sidebar
       li.nav-item
         a.nav-link(href='https://www.themoviedb.org/')  
           img(src='{{site.baseulr}}/moviedate/assets/img/tmdb.svg' height='35' alt='')
+
+      li.nav-item
+        p.nav-link
+          i.fa.fa-code.foot-icon.mr-2(aria-hidden='true')
+          | Made with 
+          span &#x2764;&#xFE0F;
+          |  by 
+          a(href='https://twitter.com/SmileSharks') Ariel
+          // 
+          | & Friends.

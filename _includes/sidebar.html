@@ -1,10 +1,10 @@
 
-<nav class="collapse bd-links col-md-2 d-none d-md-block bg-dark text-light sidebar">
+<div class="collapse bd-links col-md-2 d-none d-block bg-dark text-light sidebar" id="sidebar-wrapper">
   <div class="sidebar-sticky">
     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"><span>Movies    </span></h6>
     <ul class="nav flex-column movieOptions">
-      <li class="nav-item"><a class="nav-link" href="#" data-action="upcoming"><img class="invert" src="{{site.baseulr}}/moviedate/assets/img/film.svg" width="24" height="24" alt=""/>              Upcoming <span class="sr-only">(current)</span></a></li>
-      <li class="nav-item"><a class="nav-link" href="#" data-action="nowplaying"><img class="invert" src="{{site.baseulr}}/moviedate/assets/img/ticket.svg" width="24" height="24" alt=""/>              Now Playing</a></li>
+      <li class="nav-item nav-close"><a class="nav-link" href="#" data-action="upcoming"><img class="invert" src="{{site.baseulr}}/moviedate/assets/img/film.svg" width="24" height="24" alt=""/>              Upcoming <span class="sr-only">(current)</span></a></li>
+      <li class="nav-item nav-close"><a class="nav-link" href="#" data-action="nowplaying"><img class="invert" src="{{site.baseulr}}/moviedate/assets/img/ticket.svg" width="24" height="24" alt=""/>              Now Playing</a></li>
     </ul>
     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"><span>Info</span><a class="d-flex align-items-center text-muted" href="#"></a></h6>
     <ul class="nav flex-column mb-2">
@@ -13,6 +13,11 @@
     </ul>
     <ul class="nav flex-column mb-2 tmdb">
       <li class="nav-item"><a class="nav-link" href="https://www.themoviedb.org/"> <img src="{{site.baseulr}}/moviedate/assets/img/tmdb.svg" height="35" alt=""/></a></li>
+      <li class="nav-item">
+        <p class="nav-link"><i class="fa fa-code foot-icon mr-2" aria-hidden="true"></i>Made with <span>&#x2764;&#xFE0F;</span> by <a href="https://twitter.com/SmileSharks">Ariel</a>
+          <!-- -->& Friends.
+        </p>
+      </li>
     </ul>
   </div>
-</nav>
+</div>

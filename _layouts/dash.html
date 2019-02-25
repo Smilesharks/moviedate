@@ -8,9 +8,10 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"/>
   <link rel="stylesheet" href="{{site.baseulr}}/moviedate/assets/css/sass/dashboard.css"/>
   <link rel="stylesheet" href="{{site.baseulr}}/moviedate/assets/css/modal.css"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <link rel="stylesheet" href="{{site.baseulr}}/moviedate/assets/css/lity.min.css"/>
   <script src="{{site.baseulr}}/moviedate/assets/js/lity.min.js"></script>
+  <script src="{{site.baseulr}}/moviedate/assets/js/bootstrap.bundle.min.js"></script>
   <script src="{{site.baseulr}}/moviedate/assets/js/main.js"></script>
   <script src="{{site.baseulr}}/moviedate/assets/js/jquery.countdown.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
@@ -39,7 +40,7 @@
 <body>
   <div id="modal-container">
     <div class="modal-background">
-      <div class="col-sm-12 col-xs-12 col-xl-6 modals">
+      <div class="col-sm-12 col-xs-12 col-xl-8 modals">
         <div class="media my-3" id="display"></div>
         <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveaspectratio="none">
           <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
@@ -47,10 +48,10 @@
       </div>
     </div>
   </div>
-  <div class="container">{% include nav.html %}</div>
-  <div class="container-fluid">
+  <div class="container d-flex">{% include nav.html %}</div>
+  <div class="container-fluid" id="wrapper">
     <div class="row content">{% include sidebar.html %}
-      <main class="col-md-9 ml-sm-auto col-lg-10 px-4 role">
+      <main class="ml-sm-auto col-md-10 col-lg-10 role" id="page-content-wrapper">
         <!-- Movie Options-->
         <div class="container row"></div>
         <div class="container">
@@ -60,3 +61,15 @@
     </div>
   </div>
 </body>
+<script type="text/javascript">
+  $("#menu-toggle").click(function(e) {
+  	e.preventDefault();
+  	$("#wrapper").toggleClass("toggled");
+  	console.log("clock");
+  });
+  $(".nav-close").click(function(e) {
+  	e.preventDefault();
+  	$("#wrapper").toggleClass("toggled");
+  	console.log("clock");
+  });
+</script>
