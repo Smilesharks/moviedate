@@ -68,6 +68,8 @@ script(type='text/javascript').
 	});
 	$(".nav-close").click(function(e) {
 		e.preventDefault();
-		$("#wrapper").toggleClass("toggled");
-		console.log("click");
+		if ($("#wrapper").hasClass("toggled")) {
+				$("#wrapper").toggleClass("toggled");
+		}
+		console.log("clock");
 	});
