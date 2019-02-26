@@ -111,13 +111,12 @@ App =
                 video_link = ''
             if data.poster_path?
                 poster_url = "#{@tmdb.images_uri}#{@tmdb.image_size}#{data.poster_path}"
-                # $('.trailer').addClass('bingo').attr('data-lity','#{video_link}')
             else
                 poster_url = 'http://lorempixel.com/output/animals-q-c-640-480-10.jpg'
             image = $('<div/>').append $('<img/>').addClass('mr-3').attr('src', poster_url)
             $('#display').append image.addClass('mr-3')
             info = $('<div/>').addClass('media-body')
-            info.append $('<div/>').addClass('actualyoutube').html("<iframe width='560' height='315' src='#{video_link}' frameborder='0' allowfullscreen></iframe>")
+            # info.append $('<div/>').addClass('actualyoutube').html("<iframe width='560' height='315' src='#{video_link}' frameborder='0' allowfullscreen></iframe>")
             # $('.trailer').addClass('bingo').attr('data-lity', '').attr('href', video_link)
             info.append $('<h2/>').addClass('mt-5').text "#{data.title}"
             info.append $('<h4/>').addClass('bingo').text "Release date: #{data.release_date}"
