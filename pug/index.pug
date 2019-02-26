@@ -3,10 +3,16 @@ html(lang="en")
 head
 	meta(charset="UTF-8")
 	meta(http-equiv='X-UA-Compatible' content='ie=edge')
-	meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+	meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+	meta(name='HandheldFriendly' content='true')
 	title MovieDate - Premiere Reminder
 	meta(name='Description' content='Reminder of how much time is left for the premiere of your next favorite movie.')
-	meta(name='Keywords' content='movie')
+	meta(name='Keywords' content='movie, movies')
+	meta(property='og:url' content='https://moviedates.info/')
+	meta(property='og:type' content='article')
+	meta(property='og:title' content='MovieDate - Premiere Reminder')
+	meta(property='og:description' content='Reminder of how much time is left for the premiere of your next favorite movie.')
+	meta(property='og:image' content='assets/img/og.jpg')
 	link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css' integrity='sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS' crossorigin='anonymous')
 	link(rel='stylesheet' href='/assets/css/sass/dashboard.css')
 	link(rel='stylesheet' href='/assets/css/modal.css')
@@ -65,12 +71,10 @@ script(type='text/javascript').
 	$("#menu-toggle").click(function(e) {
 		e.preventDefault();
 		$("#wrapper").toggleClass("toggled");
-		console.log("clock");
 	});
 	$(".nav-close").click(function(e) {
 		e.preventDefault();
 		if ($("#wrapper").hasClass("toggled")) {
 				$("#wrapper").toggleClass("toggled");
 		}
-		console.log("clock");
 	});

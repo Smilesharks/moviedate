@@ -82,8 +82,6 @@ App =
                 movie_item_inner.append poster_info
                 poster_footer = $('<div/>').addClass('poster__footer poster__footer row mt-2 mb-4')
                 fecha_release = data.release_date.replace /\-/g, ""
-                # fecha_release.replace /\-/g, ""
-                console.log(data.id)
                 reminder = "http://www.google.com/calendar/event?action=TEMPLATE&dates=#{fecha_release}T010000Z%2F#{fecha_release}T010000Z&text=#{data.title}%20%2D%20Movie%20Premiere&location=http%3A%2F%2Fmoviedates.info&details=This%20reminder%20was%20created%20through%20http%3A%2F%2Fmoviedates.info"
                 poster_footer.append $('<div/>').addClass('col-3').append $('<a/>').addClass('button btn btn-secondary').attr('href', reminder).attr('target', '_blank').append $('<i/>').addClass('far fa-calendar-plus')
                 poster_footer.append $('<div/>').addClass('col-9').append $('<a/>').addClass('trailer button btn btn-primary w-100').attr('data-lity', '').attr('href', video_link).text 'Trailer'
