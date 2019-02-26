@@ -70,7 +70,7 @@ App =
             api_call_params.language = 'es-US'
             api_call_params.region = 'US'
             api_call_params.append_to_response = 'videos'
-            @api_call @tmdb.base_uri , "movie/#{movie.id}", api_call_params, (data) =>               
+            @api_call @tmdb.base_uri , "movie/#{movie.id}", api_call_params, (data) =>
                 if data.videos.results.length > 0 and data.videos.results[0].site is 'YouTube'
                     video_link = "https://www.youtube.com/embed/#{data.videos.results[0].key}"
                 else
@@ -89,7 +89,7 @@ App =
                 poster_info.append $('<p/>').addClass('poster__text m-0').text data.release_date
                 movie_item_inner.append poster_info
                 poster_footer = $('<div/>').addClass('poster__footer poster__footer row mt-2 mb-4')
-                # poster_footer.append $('<div/>').addClass('col-3').append $('<div/>').addClass('button btn btn-secondary').append $('<i/>').addClass('fas fa-calendar-plus')
+
                 poster_footer.append $('<div/>').addClass('col-3').append $('<div/>').addClass('button btn btn-secondary').append $('<i/>').addClass('fas fa-ticket-alt')
                 poster_footer.append $('<div/>').addClass('col-9').append $('<a/>').addClass('trailer button btn btn-primary w-100').attr('data-lity', '').attr('href', video_link).text 'Trailer'
                 movie_item.append movie_item_inner
@@ -118,7 +118,7 @@ App =
             $('#display').append image.addClass('mr-3')
             info = $('<div/>').addClass('media-body')
             info.append $('<div/>').addClass('actualyoutube').html("<iframe width='560' height='315' src='#{video_link}' frameborder='0' allowfullscreen></iframe>")
-            $('.trailer').addClass('bingo').attr('data-lity', '').attr('href', video_link)
+            # $('.trailer').addClass('bingo').attr('data-lity', '').attr('href', video_link)
             info.append $('<h2/>').addClass('mt-5').text "#{data.title}"
             info.append $('<h4/>').addClass('bingo').text "Release date: #{data.release_date}"
             info.append $('<h5/>').attr('data-countdown', data.release_date)
