@@ -13,14 +13,6 @@ App =
     set_handlers: () ->
         $('body').on 'click', '.movie-card', (e) =>
             @load_movie_info $(e.currentTarget).attr('data-movie-id')
-        # Link Trailer
-        #$('body').on 'click', '.trailer', (e) =>
-        #    @load_movie_info $(e.currentTarget).attr('href', '#{data.video_link}').attr('data-lity', '')
-        # Link Google calenda
-        #$('body').on 'click', '.trailer', (e) =>
-        #    @load_movie_info $(e.currentTarget).attr('src', '#{data.video_link}')
-
-
         $('body').on 'click', '#modal-container', (e) =>
             $(e.currentTarget).addClass('out')
             $('body').removeClass('modal-active')
@@ -60,7 +52,7 @@ App =
 
     search: () ->
         @api_call @tmdb.base_uri, 'search/movie', $('#query').val(), (data) =>
-            @load_movies data.results, false
+            @load_movies_search data.results, false
 
     load_movies: (movies, show_countdown) ->
         $('#info').empty()
@@ -89,9 +81,50 @@ App =
                 poster_info.append $('<p/>').addClass('poster__text m-0').text data.release_date
                 movie_item_inner.append poster_info
                 poster_footer = $('<div/>').addClass('poster__footer poster__footer row mt-2 mb-4')
-
-                poster_footer.append $('<div/>').addClass('col-3').append $('<div/>').addClass('button btn btn-secondary').append $('<i/>').addClass('fas fa-ticket-alt')
+                fecha_release = data.release_date.replace /\-/g, ""
+                # fecha_release.replace /\-/g, ""
+                console.log(data.id)
+                reminder = "http://www.google.com/calendar/event?action=TEMPLATE&dates=#{fecha_release}T010000Z%2F#{fecha_release}T010000Z&text=#{data.title}%20%2D%20Movie%20Premiere&location=http%3A%2F%2Fmoviedates.info&details=This%20reminder%20was%20created%20through%20http%3A%2F%2Fmoviedates.info"
+                poster_footer.append $('<div/>').addClass('col-3').append $('<a/>').addClass('button btn btn-secondary').attr('href', reminder).attr('target', '_blank').append $('<i/>').addClass('far fa-calendar-plus')
                 poster_footer.append $('<div/>').addClass('col-9').append $('<a/>').addClass('trailer button btn btn-primary w-100').attr('data-lity', '').attr('href', video_link).text 'Trailer'
+                movie_item.append movie_item_inner
+                movie_item.append poster_footer
+                $('#info').append movie_item
+                @load_countdown()
+
+    load_movies_search: (movies, show_countdown) ->
+        $('#info').empty()
+        for movie in movies
+            api_call_params = {}
+            api_call_params.api_key = @tmdb.api_key
+            api_call_params.language = 'es-US'
+            api_call_params.region = 'US'
+            api_call_params.append_to_response = 'videos'
+            @api_call @tmdb.base_uri , "movie/#{movie.id}", api_call_params, (data) =>
+                if data.videos.results.length > 0 and data.videos.results[0].site is 'YouTube'
+                    video_link = "https://www.youtube.com/embed/#{data.videos.results[0].key}"
+                else
+                    video_link = ''
+                if movie.poster_path?
+                    poster_url = "#{@tmdb.images_uri}#{@tmdb.image_size}#{data.poster_path}"
+                else
+                    poster_url = 'http://lorempixel.com/output/animals-q-c-640-480-10.jpg'
+                movie_item = $('<div/>').addClass('col-sm-12 col-xs-12 col-md-6 col-xl-3 movie-item')
+                movie_item_inner = $('<div/>').addClass('button poster card text-white d-flex movie-card').attr('data-movie-id', data.id)
+                if show_countdown is true then movie_item_inner.append $('<span/>').addClass('w-100 status').append $('<div/>').attr('data-countdown', data.release_date).addClass('m-2 primary')
+                movie_item_inner.append $('<div/>').addClass('poster__grad')
+                movie_item_inner.append $('<div/>').addClass('poster__img').attr('style', "filter: grayscale(1);background-image:url(#{poster_url})")
+                poster_info =  $('<div/>').addClass('poster__info align-self-end w-100 p-2')
+                poster_info.append $('<h3/>').addClass('h4 poster__title card-title').text data.title
+                poster_info.append $('<p/>').addClass('poster__text m-0').text data.release_date
+                movie_item_inner.append poster_info
+                poster_footer = $('<div/>').addClass('poster__footer poster__footer row mt-2 mb-4')
+                fecha_release = data.release_date.replace /\-/g, ""
+                # fecha_release.replace /\-/g, ""
+                console.log(fecha_release)
+                reminder = "http://www.google.com/calendar/event?action=TEMPLATE&dates=#{fecha_release}T010000Z%2F#{fecha_release}T010000Z&text=#{data.title}%20%2D%20Movie%20Premiere&location=http%3A%2F%2Fmoviedates.info&details=This%20reminder%20was%20created%20through%20http%3A%2F%2Fmoviedates.info"
+                # poster_footer.append $('<div/>').addClass('col-3').append $('<a/>').addClass('button btn btn-secondary').attr('href', reminder).attr('target', '_blank').append $('<i/>').addClass('far fa-calendar-plus')
+                poster_footer.append $('<div/>').addClass('col-12').append $('<a/>').addClass('trailer button btn btn-primary w-100').attr('data-lity', '').attr('href', video_link).text 'Trailer'
                 movie_item.append movie_item_inner
                 movie_item.append poster_footer
                 $('#info').append movie_item
@@ -118,7 +151,7 @@ App =
             info = $('<div/>').addClass('media-body')
             # info.append $('<div/>').addClass('actualyoutube').html("<iframe width='560' height='315' src='#{video_link}' frameborder='0' allowfullscreen></iframe>")
             # $('.trailer').addClass('bingo').attr('data-lity', '').attr('href', video_link)
-            info.append $('<h2/>').addClass('mt-5').text "#{data.title}"
+            info.append $('<h2/>').addClass('mt-4').text "#{data.title}"
             info.append $('<h4/>').addClass('bingo').text "Release date: #{data.release_date}"
             info.append $('<h5/>').attr('data-countdown', data.release_date)
             info.append $('<p/>').addClass('bingo').text "Description: #{data.overview}"
