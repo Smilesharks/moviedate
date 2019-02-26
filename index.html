@@ -51,7 +51,7 @@
     </div>
   </div>
   <div class="container d-flex">
-    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-3 p-sm-1 shadow"><a class="navbar-brand mr-0 mr-md-2" href="#"><img src="/moviedate/assets/img/moviedate.svg" width="198" height="35" alt=""/></a>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-3 p-sm-1 shadow"><a class="navbar-brand mr-0 mr-md-2" href="#"><img src="/assets/img/moviedate.svg" width="198" height="35" alt=""/></a>
       <div class="col-12 col-md-3 col-xl-4 bd-sidebar my-3">
         <form class="search bd-search d-flex align-items-center">
           <input class="form-control mr-sm-2" id="query" type="text" placeholder="Search" required="" aria-label="Search"/>
@@ -67,16 +67,16 @@
         <div class="sidebar-sticky">
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"><span>Movies    </span></h6>
           <ul class="nav flex-column movieOptions">
-            <li class="nav-item nav-close"><a class="nav-link" href="#" data-action="upcoming"><img class="invert" src="/moviedate/assets/img/film.svg" width="24" height="24" alt=""/>              Upcoming <span class="sr-only">(current)</span></a></li>
-            <li class="nav-item nav-close"><a class="nav-link" href="#" data-action="nowplaying"><img class="invert" src="/moviedate/assets/img/ticket.svg" width="24" height="24" alt=""/>              Now Playing</a></li>
+            <li class="nav-item nav-close"><a class="nav-link" href="#" data-action="upcoming"><img class="invert" src="/assets/img/film.svg" width="24" height="24" alt=""/>              Upcoming <span class="sr-only">(current)</span></a></li>
+            <li class="nav-item nav-close"><a class="nav-link" href="#" data-action="nowplaying"><img class="invert" src="/assets/img/ticket.svg" width="24" height="24" alt=""/>              Now Playing</a></li>
           </ul>
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"><span>Info</span><a class="d-flex align-items-center text-muted" href="#"></a></h6>
           <ul class="nav flex-column mb-2">
-            <li class="nav-item"><a class="nav-link typeform-share" href="https://arielcerda.typeform.com/to/r5W3dV" data-mode="drawer_right" data-submit-close-delay="5" target="_blank"><img class="invert" src="/moviedate/assets/img/envelope-alt.svg" width="24" height="24" alt=""/>              What's coming?</a></li>
+            <li class="nav-item"><a class="nav-link typeform-share" href="https://arielcerda.typeform.com/to/r5W3dV" data-mode="drawer_right" data-submit-close-delay="5" target="_blank"><img class="invert" src="/assets/img/envelope-alt.svg" width="24" height="24" alt=""/>              What's coming?</a></li>
             <li class="nav-item"><a class="nav-link bmc-button" target="_blank" href="https://www.buymeacoffee.com/xvjL2lU86"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a Coffe"/>              Buy me a Coffe</a></li>
           </ul>
           <ul class="nav flex-column mb-2 tmdb">
-            <li class="nav-item"><a class="nav-link" href="https://www.themoviedb.org/"> <img src="/moviedate/assets/img/tmdb.svg" height="35" alt=""/></a></li>
+            <li class="nav-item"><a class="nav-link" href="https://www.themoviedb.org/"> <img src="/assets/img/tmdb.svg" height="35" alt=""/></a></li>
             <li class="nav-item">
               <p class="nav-link"><i class="fa fa-code foot-icon mr-2" aria-hidden="true"></i>Made with <span>&#x2764;&#xFE0F;</span> by <a href="https://twitter.com/SmileSharks">Ariel</a>& Friends.</p>
             </li>
@@ -101,7 +101,9 @@
   });
   $(".nav-close").click(function(e) {
   	e.preventDefault();
-  	$("#wrapper").toggleClass("toggled");
-  	console.log("click");
+  	if ($("#wrapper").hasClass("toggled")) {
+  			$("#wrapper").toggleClass("toggled");
+  	}
+  	console.log("clock");
   });
 </script>
