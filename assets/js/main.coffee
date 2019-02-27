@@ -146,8 +146,6 @@ App =
             image = $('<div/>').append $('<img/>').addClass('mr-3').attr('src', poster_url)
             $('#display').append image.addClass('mr-3')
             info = $('<div/>').addClass('media-body')
-            # info.append $('<div/>').addClass('actualyoutube').html("<iframe width='560' height='315' src='#{video_link}' frameborder='0' allowfullscreen></iframe>")
-            # $('.trailer').addClass('bingo').attr('data-lity', '').attr('href', video_link)
             info.append $('<h2/>').addClass('mt-4').text "#{data.title}"
             info.append $('<h4/>').addClass('bingo').text "#{data.tagline}"
             info.append $('<h5/>').addClass('bingo').text "Release date: #{data.release_date}"
@@ -157,7 +155,6 @@ App =
             $('#modal-container').removeAttr('class').addClass('one')
             $('body').addClass('modal-active')
 
-            #poster_footer.append $('<a/>').attr('src', video_link)
 
     load_countdown: () ->
         for element in $('[data-countdown]')
