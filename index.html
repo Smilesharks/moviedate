@@ -62,7 +62,7 @@
   </div>
   <div class="container d-flex">
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-3 p-sm-1 shadow"><a class="navbar-brand ml-3 mr-md-2" href="http://moviedates.info"><img src="/assets/img/moviedates.svg" width="198" height="35" alt=""/></a>
-      <button class="btn btn-primary ml-2" id="menu-toggle"><i class="fas fa-bars"></i></button>
+      <button class="btn btn-primary mr-2" id="menu-toggle"><i class="fas fa-bars"></i></button>
       <div class="col-12 col-md-3 col-xl-4 bd-sidebar mt-3 mb-1">
         <div class="search bd-search d-flex align-items-center">
           <input class="form-control mr-sm-2" id="query" type="text" placeholder="Search" required="" aria-label="Search"/>
@@ -104,11 +104,11 @@
   </div>
 </body>
 <script type="text/javascript">
-  $("#menu-toggle").click(function(e) {
+  $("#menu-toggle").on('click touch', function (e) {
   	e.preventDefault();
   	$("#wrapper").toggleClass("toggled");
   });
-  $(".nav-close").click(function(e) {
+  $(".nav-close").on('click touch', function (e) {
   	e.preventDefault();
   	if ($("#wrapper").hasClass("toggled")) {
   			$("#wrapper").toggleClass("toggled");

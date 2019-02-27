@@ -75,11 +75,11 @@ body
 				.container
 					#info.row
 script(type='text/javascript').
-	$("#menu-toggle").click(function(e) {
+	$("#menu-toggle").on('click touch', function (e) {
 		e.preventDefault();
 		$("#wrapper").toggleClass("toggled");
 	});
-	$(".nav-close").click(function(e) {
+	$(".nav-close").on('click touch', function (e) {
 		e.preventDefault();
 		if ($("#wrapper").hasClass("toggled")) {
 				$("#wrapper").toggleClass("toggled");

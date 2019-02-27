@@ -11,16 +11,16 @@ App =
         @load_upcoming()
 
     set_handlers: () ->
-        $('body').on 'click', '.movie-card', (e) =>
+        $('body').on 'touch click', '.movie-card', (e) =>
             @load_movie_info $(e.currentTarget).attr('data-movie-id')
-        $('body').on 'click', '#modal-container', (e) =>
+        $('body').on 'touch click', '#modal-container', (e) =>
             $(e.currentTarget).addClass('out')
             $('body').removeClass('modal-active')
 
-        $('body').on 'click', '[data-action="nowplaying"]', (e) =>
+        $('body').on 'touch click', '[data-action="nowplaying"]', (e) =>
             @load_nowplaying()
 
-        $('body').on 'click', '[data-action="upcoming"]', (e) =>
+        $('body').on 'touch click', '[data-action="upcoming"]', (e) =>
             @load_upcoming()
 
         $('#search').click (e) => @search()
@@ -114,7 +114,7 @@ App =
                 movie_item_inner.append $('<div/>').addClass('poster__img').attr('style', "filter: grayscale(1);background-image:url(#{poster_url})")
                 poster_info =  $('<div/>').addClass('poster__info align-self-end w-100 p-2')
                 poster_info.append $('<h3/>').addClass('h4 poster__title card-title').text data.title
-                poster_info.append $('<p/>').addClass('poster__text m-0').text data.release_date
+                poster_info.append $('<p/>').addClass('poster__text m-0').text "User Score: #{data.vote_average}"
                 movie_item_inner.append poster_info
                 poster_footer = $('<div/>').addClass('poster__footer poster__footer row mt-2 mb-4')
                 fecha_release = data.release_date.replace /\-/g, ""
