@@ -27,6 +27,7 @@
   <script src="/assets/js/jquery.countdown.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
   <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro|Poppins" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"/>
   <!-- Global site tag (gtag.js) - Google Analytics-->
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-89924603-1"></script>
   <!-- Facebook Pixel Code-->
@@ -66,15 +67,9 @@
   <script>(function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })()</script>
 </head>
 <body>
-  <div id="modal-container">
-    <div class="modal-background">
-      <div class="col-sm-12 col-xs-12 col-xl-6 modals">
-        <div class="media my-3" id="display"></div>
-        <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveaspectratio="none">
-          <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
-        </svg>
-      </div>
-    </div>
+  <div class="lity-hide" id="lity-modal">
+    <div class="col-sm-12 col-xs-12 col-xl-6 px-0" id="cover"></div>
+    <div class="col-sm-12 col-xs-12 col-xl-6" id="display"></div>
   </div>
   <div class="container d-flex">
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-3 p-sm-1 shadow"><a class="navbar-brand ml-3 mr-md-2" href="http://moviedates.info"><img src="/assets/img/moviedates.svg" width="198" height="35" alt=""/></a>
@@ -130,4 +125,10 @@
   			$("#wrapper").toggleClass("toggled");
   	}
   });
+</script>
+<script type="text/javascript">
+   $(window).resize(function() {
+  	 $(window).height(); // New height
+  	 $(window).width(); // New width
+   });
 </script>

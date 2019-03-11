@@ -16,6 +16,7 @@ html,body {
 }
 
 #modal-container {
+	background:rgba(0,0,0,.8);
 	position:fixed;
 	display:table;
 	height:100%;
@@ -23,7 +24,7 @@ html,body {
 	top:0;
 	left:0;
 	transform:scale(0);
-	z-index:1;
+	z-index:1031;
 	&.one {
 		transform:scaleY(.01) scaleX(0);
 		animation:unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
@@ -43,6 +44,7 @@ html,body {
 			}
 		}
 	}
+
 	&.two {
 		transform:scale(1);
 		.modal-background {
@@ -69,6 +71,7 @@ html,body {
 			}
 		}
 	}
+
 	&.three {
 		z-index:0;
 		transform:scale(1);
@@ -211,29 +214,31 @@ html,body {
 		}
 	}
 	.modal-background {
+		cursor: pointer;
 		display:table-cell;
-		background:rgba(0,0,0,.8);
-		text-align:center;
-		vertical-align:middle;
+		// background:rgba(0,0,0,.8);
+		// text-align:center;
+		vertical-align:bottom;
 		.modals {
-			background:white;
-			padding:50px;
-			display:inline-block;
-			border-radius:3px;
-			font-weight:300;
-			position:relative;
+			// background:white;
+			// background:#2E2E2E;
+			// padding:50px;
+			// display:inline-block;
+			// border-radius: 50px 50px 0px 0px;
+			// font-weight:300;
+			// position:relative;
 			h1,h2,h3,h4 {
 				// font-size:25px;
-				line-height:25px;
-				margin-bottom:15px;
-				color: #181818;
-				text-align: left;
+				// line-height:25px;
+				// margin-bottom:15px;
+				// color: #181818;
+				// text-align: left;
 			}
 			p {
-				font-size:18px;
-				line-height:22px;
-				color: #181818;
-				text-align: left;
+				// font-size:18px;
+				// line-height:22px;
+				// color: #181818;
+				// text-align: left;
 			}
 			.modal-svg {
 				position:absolute;
@@ -286,7 +291,7 @@ html,body {
 				background:#009bd5;
 			}
 		}
-	} 
+	}
 }
 
 @keyframes unfoldIn {

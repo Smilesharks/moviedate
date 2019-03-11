@@ -1,0 +1,1321 @@
+// h2, h3, h4, p
+//   padding-left: 0
+//   padding-right: 0
+//
+// main
+//   width: 100%
+//   overflow: hidde
+
+section
+  img.backdrop.fade.backdrop.fade.lazyautosizes.lazyloaded
+    position: relative
+    top: -3vw
+    width: 100vw
+    height: 56vw
+    border-radius: 0
+  a.progressive, div.no_image_holder
+      position: absolute
+      bottom: -20vw
+      height: 39vw
+      left: 20px
+
+section.inner_content.backdrop:before
+  background: linear-gradient(to bottom right, #eee, #fff)
+  filter: brightness(100%)
+
+div.header.large.first div.single_column, section.inner_content.person_content div.single_column.medium
+  padding-top: 0
+  padding-bottom: 0
+
+div.header.first div.single_column, section.inner_content.person_content div.single_column
+  padding-left: 0
+  padding-right: 0
+
+div
+  &.single_column
+    width: 100%
+    padding: 30px 20px
+    box-sizing: border-box
+  &.header.first div.single_column
+    box-sizing: border-box
+
+section
+  div.header
+    &.large.first div.single_column
+      background-color: transparent
+    &.first div.single_column
+      background-color: rgba(0, 0, 0, 0.6)
+      padding: 20px 0
+      border-bottom: 1px solid #d7d7d7
+  &.person_content div.header.first div.single_column
+    background-color: rgba(0, 0, 0, 0.4)
+
+div.header_info
+  padding: 0 20px
+
+section
+  &.inner_content
+    div.header.large section.images
+      height: auto
+    section.images div.poster
+      float: none
+      display: block
+      margin: 0 auto
+      width: 100vw
+      height: 50vw
+      z-index: 1
+      position: relative
+      top: 0
+      overflow: visible
+      &.profile
+        position: relative
+        top: 6vw
+        width: 50vw
+        height: 50vw
+      &.no_backdrop
+        padding-top: 20px
+        height: 24vw
+        box-sizing: border-box
+      &.profile.no_image
+        padding-top: 0
+    &.person_content ul.shortcut_bar
+      padding-left: 20px
+      width: 100%
+      background-color: rgba(0, 0, 0, 0.1)
+      border-bottom: 1px solid #dedede
+  &.person_content ul.shortcut_bar
+    background: transparent
+    align-items: center
+  &.inner_content ul.shortcut_bar
+    width: 100%
+    -webkit-overflow-scrolling: touch
+    overflow-x: scroll
+    white-space: nowrap
+    display: flex
+    align-items: center
+    align-content: center
+    padding-left: 20px
+    border-bottom: 1px solid #474747
+
+div.episode ul.episode_shortcut_bar
+  width: 100%
+  -webkit-overflow-scrolling: touch
+  overflow-x: scroll
+  white-space: nowrap
+  display: flex
+  align-items: center
+  align-content: center
+  padding-left: 20px
+  border-bottom: 1px solid #474747
+
+section.inner_content.generic ul.shortcut_bar
+  background-color: #fff
+  border-bottom: none
+
+div.episode ul.episode_shortcut_bar
+  justify-content: flex-start
+  border-top: none
+  border-bottom: 1px solid #e3e3e3
+  padding-bottom: 10px
+
+section.inner_content ul.shortcut_bar li
+  font-size: 1em
+  margin-right: 20px
+  padding-top: 8px
+  padding-bottom: 8px
+
+div.episode ul.episode_shortcut_bar li
+  font-size: 1em
+  margin-right: 20px
+  padding-top: 8px
+  padding-bottom: 8px
+  padding: 0
+  font-size: 0.8em
+  margin-right: 20px
+
+section
+  &.inner_content
+    ul
+      &.shortcut_bar li
+        &:hover, &.no_hover:hover
+          border-bottom: none
+          padding-bottom: 8px
+        &:hover
+          color: #fff
+          a
+            color: #fff
+        a, span.k-icon
+          font-size: 1em
+          font-weight: 400
+        a, span, a:hover
+          color: #fff
+        &:last-child
+          padding-right: 20px
+      &.episode_shortcut_bar li:last-child
+        padding-right: 20px
+    div.content_wrapper.black ul.shortcut_bar li
+      a, span
+        color: #000
+  &.person_content ul.shortcut_bar li
+    a, span
+      color: #000
+    &:hover
+      color: rgba(0, 0, 0, 0.6)
+      a, span
+        color: rgba(0, 0, 0, 0.6)
+  &.inner_content div.inner_sub_menu ul li
+    padding: 8px 14px 8px 14px
+    background-color: #575757
+    border-bottom: 1px solid #474747
+    border-left: 1px solid #474747
+    border-right: 1px solid #474747
+    &.primary
+      display: none
+    a
+      font-size: 0.9em
+      color: #fff
+      span
+        color: rgba(255, 255, 255, 0.8)
+
+div.header_poster_wrapper
+  min-height: auto
+  display: static
+
+section
+  &.inner_content section.header
+    width: 100%
+    position: relative
+    bottom: 0
+    top: 0
+    float: none
+    box-sizing: border-box
+    padding-left: 0
+    align-items: flex-start
+    &.small
+      padding: 0 20px
+    &.profile
+      padding-left: 20px
+      padding-right: 20px
+      margin-top: 30px
+      height: auto
+    span.release_date
+      font-size: 0.8em
+    &.small h2
+      font-size: 1.6em
+    div
+      &.pad
+        padding: 0 20px
+      &.overview p:last-child
+        margin-bottom: 30px
+    &.poster div.title
+      h2
+        width: 100%
+        display: inline-block
+        z-index: 0
+        padding-left: calc(26vw + 20px)
+      h3
+        width: 100%
+        display: inline-block
+        z-index: 0
+        padding-left: calc(26vw + 20px)
+        span
+          color: #fff
+          opacity: 0.6
+      div.mobile_header
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+        box-sizing: border-box
+        padding: 0 20px
+        z-index: 4
+        min-height: calc(19vw + 20px)
+        div.content
+          padding: 20px 0
+        &.small h2
+          font-size: calc(0.4em + 3vw)
+        &.medium h2
+          font-size: calc(0.6em + 3vw)
+        &.large h2
+          font-size: calc(0.7em + 3vw)
+        &.small h3
+          font-size: calc(0.3em + 3vw)
+        &.medium h3, &.large h3
+          font-size: calc(0.4em + 3vw)
+        &.small h3.season
+          font-size: calc(0.1em + 3vw)
+        &.medium h3.season
+          font-size: calc(0.2em + 3vw)
+        &.large h3.season
+          font-size: calc(0.3em + 3vw)
+        h3.season
+          opacity: 0.8
+  &.header.small div.second_header
+    display: none
+
+div
+  &.second_header
+    padding: 0 20px 20px 20px
+    box-sizing: border-box
+    display: flex
+    align-items: center
+    justify-content: space-around
+    &.false, &.tv_episode
+      justify-content: flex-start
+  &.consensus
+    box-sizing: border-box
+    display: flex
+    align-items: center
+    height: auto
+    width: auto
+    left: 0
+    div.outer_ring
+      width: 45px
+      height: 45px
+      margin-right: 10px
+    .user_score_chart .percent
+      display: flex
+      align-items: center
+      justify-content: center
+      padding-top: 1px
+      box-sizing: border-box
+      .icon
+        font-size: 0.8em
+        line-height: 1em
+    div.text
+      font-weight: 700
+      color: #fff
+      max-width: 60%
+  &.no_backdrop + section.header.poster div.title h2
+    padding-top: 0
+
+section
+  &.inner_content section.header
+    span.social_links
+      width: 100%
+      display: flex
+      justify-content: center
+      a
+        margin: 0 4px
+        &:first-of-type
+          margin-left: 0
+    &.poster div.title
+      h3
+        margin-bottom: 0
+        &.tv_episode
+          display: block
+          padding-left: 0
+      h2.tv_episode
+        display: block
+        padding-left: 0
+        margin-top: 30px
+      h3 span.glyphicons
+        display: none
+    &.profile h2
+      width: 100%
+      display: inline-block
+      font-size: 2em
+      padding: 0
+      text-align: center
+    h3.reset
+      padding-left: 0
+  &.facts div.social_links div
+    margin-bottom: 20px
+  &.inner_content section.header
+    div.title
+      margin-bottom: 30px
+      text-align: left
+    &.poster div.title
+      background-color: rgba(0, 0, 0, 0.6)
+      box-sizing: border-box
+      position: relative
+      top: 0
+      left: 0
+
+ul.shortcut_bar
+  background-color: rgba(0, 0, 0, 0.6)
+  box-sizing: border-box
+  position: relative
+  top: 0
+  left: 0
+  background-color: rgba(0, 0, 0, 0.65)
+
+section
+  &.inner_content section
+    &.header
+      &.poster div.title a, div.title a
+        color: #fff
+      &.profile div.title a
+        color: #000
+      div
+        &.trailer
+          color: #fff
+          display: inline-flex
+          align-items: center
+          box-sizing: border-box
+          overflow: hidden
+        &.score + div.pipe
+          margin-left: 4px
+        &.second_header div.pipe
+          box-sizing: border-box
+          width: 1px
+          height: 24px
+          display: inline-block
+          border-left: 1px solid rgba(255, 255, 255, 0.3)
+          margin-top: 4px
+        &.trailer a
+          display: inline-flex
+          align-items: center
+          font-size: 1em
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
+          span
+            position: static
+            padding-top: 2px
+            padding-right: 4px
+      &.no_image ul li a
+        color: #fff
+    &.images
+      display: block
+      div
+        div.image_content
+          width: 100%
+          height: 100%
+          position: static
+          overflow: hidden
+          box-sizing: border-box
+        &.poster
+          &.no_backdrop div.image_content
+            overflow: visible
+          div.image_content a
+            width: auto
+            height: auto
+          img.backdrop
+            position: relative
+            top: -3vw
+            width: 100vw
+            height: 56vw
+            border-radius: 0
+          a.progressive, div.no_image_holder
+            position: absolute
+            bottom: -20vw
+            height: 39vw
+            left: 20px
+          a.progressive img, img.poster
+            width: 26vw
+            height: 39vw
+            z-index: 4
+        &.profile
+          width: 50vw
+          height: 50vw
+          margin: 0 auto
+          margin-top: 30px
+          a.progressive img, div.no_image_holder
+            width: 50vw
+            height: 50vw
+            margin-top: 0
+            box-sizing: border-box
+            bottom: auto
+            margin-left: 0
+            border-radius: 4px
+  &.images div.image_content + div.zoom
+    display: none
+  &.inner_content section.header ul.actions
+    position: fixed
+    bottom: 0
+    left: 0
+    width: 100%
+    height: auto
+    z-index: 2
+    margin-bottom: 0
+    display: flex
+    justify-content: space-around
+    background: rgba(8, 28, 36, 0.85)
+    box-sizing: border-box
+    li
+      &.tooltip
+        background: none
+        margin: 0
+        border: none
+        padding: 0
+      a
+        color: #fff !important
+        border: none !important
+        background-color: transparent !important
+        width: 30px
+        height: 30px
+      &.menu ul.sub_menu li a
+        color: #00d573 !important
+        padding: 0
+
+div
+  &#lists_content
+    width: 100%
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    box-sizing: border-box
+    ul
+      display: block
+      position: relative
+      background: #fff
+      padding: 0
+      box-sizing: border-box
+      li
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+        box-sizing: border-box
+  &.column_wrapper
+    flex-wrap: wrap
+  &.reverse
+    &.person_page div.grey_column, div.grey_column
+      width: 100%
+      order: 2
+      padding-right: 0
+    &.person_page div.white_column, div.white_column
+      width: 100%
+      padding-left: 0
+      padding-bottom: 0
+  &.white_column
+    width: 100%
+    height: auto
+    min-height: auto
+    justify-content: flex-start
+    padding: 0
+  &.grey_column
+    width: 100%
+    height: auto
+    min-height: auto
+    justify-content: flex-start
+    padding: 0
+    &.pad
+      padding-top: 0
+  &.white_column.pad
+    padding-top: 0
+  &.column_wrapper div.content_wrapper
+    flex-wrap: wrap
+    width: 100%
+    box-sizing: border-box
+  &.header.first div.content_wrapper.full_width.bottom_border, &.header_small div.content_wrapper.full_width.bottom_border
+    background-color: transparent
+    border: none
+  &.content_wrapper
+    &.pad
+      padding-top: 30px
+      padding-bottom: 30px
+    div.split
+      width: 100%
+    ol.credits
+      white-space: normal
+    section.main_column ol.credits
+      padding-bottom: 0
+    div
+      &.crew_wrapper:last-of-type ol.credits:last-of-type
+        padding-bottom: 0
+        li:last-child
+          margin: 0
+      &.leaderboard
+        width: 100%
+  &.column_wrapper div.content_wrapper.pad
+    min-height: auto
+    padding: 20px 20px
+
+section.split_column
+  padding-top: 0
+  width: 100%
+
+div.grey_column > div
+  width: 100%
+  padding: 30px 20px
+
+section
+  &.split_column
+    section
+      width: 100%
+      margin-bottom: 30px
+    div
+      &.left_column, &.right_column
+        float: none
+        padding: 0
+    > div
+      width: 100%
+      padding: 0
+  &.top_billed
+    padding: 40px 20px 0 20px
+  &.panel
+    width: 100vw
+    padding: 30px 20px
+    &:last-of-type
+      padding-bottom: 30px
+    &.scroller
+      padding: 30px 0
+    &.collection
+      padding-left: 0
+      padding-right: 0
+      width: calc(100vw - 40px)
+    h3
+      padding: 0
+      font-size: 1.2em
+    &.scroller
+      h3, p.new_button
+        padding: 0 20px
+  &.facts, &.genres, &.keywords
+    font-size: calc(0.7em + 1vw)
+  &.panel h3 + p
+    padding: 0 20px
+
+div.media
+  section h3 > p
+    padding-left: 0
+  div.slip_out section > p
+    padding-left: 20px
+    padding-right: 20px
+
+section.split_column p.full_width.button
+  right: 0
+  margin-top: 0
+  margin-bottom: 30px
+
+p.full_width.button a.rounded
+  display: inline-block
+
+section
+  &.split_column > div:last-child
+    background-color: transparent
+    padding-top: 0
+  &.content_score
+    box-sizing: border-box
+    div.content_score
+      width: 100%
+
+div#popularity_waypoint
+  width: 100%
+
+section.review div.review_container div
+  &.content
+    width: 100%
+  &.inner_content
+    width: 100%
+    padding-right: 0
+  &.grouped
+    padding-bottom: 20px
+    flex-wrap: nowrap
+    width: 100%
+  &.avatar
+    margin-bottom: 10px
+
+div.media section div.info
+  h3, p
+    white-space: normal
+
+ol.people li p.character
+  font-size: 0.9em
+
+section
+  &.review div.review_container div
+    &.image
+      display: none
+    &.inner_content
+      h3
+        padding-left: 0
+        padding-bottom: 4px
+      div.rating
+        margin-left: 0
+        display: block
+        span
+          top: 2px
+      h5
+        display: inline-block
+        padding-left: 0
+        margin-top: 10px
+      div.teaser
+        padding-left: 0
+        padding-right: 0
+        width: 100%
+  &.media_panel
+    > div.content
+      &.mini
+        white-space: normal
+        div ul
+          flex-wrap: wrap
+          li
+            width: 100%
+            &:nth-child(n+2)
+              margin-top: 10px
+      div.view_more div.link
+        padding-top: 0
+    div.menu
+      position: relative
+      top: 0
+      left: 0
+      padding: 0
+      align-content: flex-start
+      justify-content: space-between
+  &.panel.media_panel.scroller
+    ul
+      padding-right: 20px
+    div.menu
+      margin-bottom: 12px
+
+div.single_column_wrapper.slip_out div.single_column
+  padding-left: 0
+  padding-right: 0
+
+section
+  &.social_panel div.menu
+    padding-left: 0
+    padding-right: 0
+  &.media_panel
+    div.content
+      height: 141px
+      width: 100%
+      box-sizing: border-box
+    &.social_panel div.content
+      height: auto
+    div.content div
+      &.video, &.backdrop
+        width: 250px
+        height: 141px
+      &.video
+        iframe, &.view_more div.link
+          width: 250px
+          height: 141px
+      &.backdrop.view_more div.link
+        width: 250px
+        height: 141px
+    > div.content div.backdrop img
+      width: 250px
+      height: 141px
+
+div.video.card
+  overflow: hidden
+  flex-wrap: wrap
+  height: auto
+  &.default
+    height: auto
+  div
+    &.wrapper
+      width: 100%
+      height: 50vw
+    &.iframe
+      width: 100%
+      height: 100%
+      float: none
+      box-sizing: border-box
+      line-height: 0
+    &.info
+      height: auto
+      width: 100%
+      p.report
+        position: static
+
+section.media_panel
+  div
+    &.content div.poster
+      width: 94px
+      height: 141px
+      &.view_more div.link
+        width: 94px
+        height: 141px
+    &.menu
+      h3
+        margin-right: 0
+      ul
+        display: flex
+        flex-direction: row-reverse
+        flex-wrap: wrap
+        align-items: flex-start
+        width: auto
+        li
+          border-bottom: 3px solid transparent
+          margin-right: 0
+          margin-left: 24px
+          text-align: right
+          font-size: 1em
+          &.active
+            margin-bottom: 5px
+  > div.content div.poster img
+    width: 94px
+    height: 141px
+
+div.media
+  &.movie_v4.header_medium, &.tv_v4.header_medium, &.person_v4.header_medium
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+
+section.inner_content div.bg_filter
+  max-height: none
+  background: #fff
+
+div.media
+  &.movie_v4.header_medium div.left_column, &.tv_v4.header_medium div.left_column, &.person_v4 div.left_column
+    position: static
+    float: none
+    width: 100%
+    order: 2
+    padding: 0 20px
+    box-sizing: border-box
+    margin-top: 30px
+  &.movie_v4.header_medium section.main_column, &.tv_v4.header_medium section.main_column, &.person_v4 section.main_column
+    order: 1
+    float: none
+    width: 100%
+    padding: 0 20px
+    margin-top: 50px
+  &.header_medium div.left_column + section.main_column
+    margin-bottom: 50px
+
+section.inner_content section.header
+  h2 a
+    color: #fff
+  &.profile h2 a
+    color: #000
+  div.biography
+    height: auto
+    width: 100%
+    div.content div.text.reset
+      max-height: none
+      height: auto
+      p:last-of-type
+        margin-bottom: 0
+
+div
+  &.media.person_v4.header_medium section.main_column
+    top: 0
+    margin-top: 30px
+    margin-bottom: 30px
+  &#known_for + section.main_column
+    margin-top: 10px
+
+section.inner_content section.header.truncated
+  height: auto
+
+div#known_for
+  padding-top: 30px
+  h3
+    padding: 0 20px
+
+ul.horizontal_media_list
+  flex-wrap: nowrap
+  width: 100vw
+  -webkit-overflow-scrolling: touch
+  overflow-y: hidden
+  overflow-x: scroll
+  white-space: nowrap
+  margin-bottom: 0
+  li
+    display: inline-block
+    width: 132px
+    box-sizing: border-box
+    text-align: center
+    margin-bottom: 30px
+    margin-right: 15px
+    white-space: normal
+    &.card
+      border: 1px solid #e3e3e3
+    &:first-child
+      margin-left: 20px
+    div.image
+      width: 130px
+      height: 195px
+      margin: 0
+    img
+      width: 100%
+      height: 100%
+      border-radius: 0
+      &.placeholder
+        width: 100%
+        height: 100%
+        border-radius: 0
+      width: 130px
+      height: 195px
+    p
+      padding: 7px 10px
+    a.title
+      width: 100%
+      display: inline-block
+      text-align: left
+      font-size: 1em
+      color: #000
+
+section
+  &.leaderboard div.leaders > p
+    margin-top: 20px
+  &.inner_content div.header.medium section
+    &.header
+      padding-bottom: 30px
+    &.images div.poster
+      margin-bottom: 0
+
+div
+  &.header
+    p.full_width.button
+      margin-top: 50px
+      margin-bottom: 0
+    &.collection:before
+      width: 100%
+  &#collection_waypoint, &.header.collection
+    width: 100%
+
+ol.people
+  width: 100vw
+  -webkit-overflow-scrolling: touch
+  overflow-y: hidden
+  overflow-x: scroll
+  white-space: nowrap
+  box-sizing: border-box
+  padding-bottom: 16px
+  &.no_image
+    width: calc(100vw - 40px)
+    padding-bottom: 30px
+    li
+      width: 50%
+      flex-basis: 50%
+      margin-bottom: 0
+      box-sizing: border-box
+      &:nth-child(odd)
+        padding-left: 0
+        padding-right: 10px
+      &:nth-child(even)
+        padding-left: 10px
+        padding-right: 0
+      &:first-child
+        margin-left: 0
+      &:last-child
+        margin-right: 0
+      &:nth-child(n+3) p:first-child
+        padding-top: 20px
+  li
+    &:first-child
+      margin-left: 20px
+    &:last-child
+      margin-right: 20px
+  &.scroller li
+    &:last-child
+      width: auto
+      padding-left: 20px
+      padding-right: 40px
+      display: flex
+      align-items: center
+    &.pad:last-child
+      padding: 0
+    &:last-child p
+      white-space: nowrap
+      padding: 0 !important
+  &.center
+    justify-content: flex-start
+  li
+    display: inline-block
+    width: 122px
+    text-align: left
+    p
+      overflow: visible
+      text-overflow: clip
+      white-space: normal
+      word-wrap: break-word
+    > a
+      width: 120px
+      height: 133px
+      margin-bottom: 0
+
+section.panel ol.people li p:first-of-type
+  padding-top: 8px
+
+ol.credits li, ul.credits li
+  width: 100%
+  height: auto
+  box-sizing: border-box
+  display: flex
+
+ol.people.credits li
+  margin-top: 0
+  margin-bottom: 10px
+  &:first-child
+    margin-left: 0
+  > a
+    margin-bottom: 0
+  div.info
+    width: 100%
+    height: auto
+    margin-left: 0
+    float: none
+    display: block
+    margin-bottom: 0
+    box-sizing: border-box
+    padding-right: 0
+
+section.main_column h4.department
+  margin-top: 0
+  margin-bottom: 20px
+
+div.column p.login
+  margin-bottom: 20px
+
+section.recommendations
+  width: 100vw
+  div.scroller
+    width: 100vw
+    padding-left: 20px
+    padding-right: 20px
+
+table
+  &.credit_group tbody td
+    &.year
+      padding-left: 14px
+      padding-right: 0
+    &.role
+      padding-right: 10px
+  &.changes_v4
+    width: 100%
+    max-width: 100%
+    overflow: hidden
+    tbody
+      width: 100%
+      max-width: 100%
+      overflow: hidden
+      td
+        &.account
+          padding-left: 20px
+        &.content
+          width: 100%
+          max-width: 250px
+          overflow: scroll
+          box-sizing: border-box
+
+div
+  &.header.large.season
+    + div.single_column_wrapper
+      padding-top: 0
+    height: auto
+    section.season
+      height: auto
+      img
+        display: none
+      div.content
+        position: relative
+        top: 0
+        left: 0
+        width: 100%
+        div.season_list
+          display: flex
+          flex-wrap: wrap
+          ul
+            max-width: 100%
+            width: 100%
+            order: 1
+            margin-bottom: 40px
+          h3
+            width: 100%
+            order: 2
+            display: block
+        h2
+          margin-top: 0
+  &.season_wrapper section.panel div.season
+    flex-wrap: nowrap
+    padding: 0 20px
+    width: calc(100vw - 40px)
+    div.content
+      width: 100%
+      padding-left: 20px
+      h2
+        padding-right: 0
+      h4
+        display: block
+      div.season_overview
+        padding-top: 20px
+  &.season.card > a, &.season_wrapper section.panel div.season > a, &.season.card > a img, &.season_wrapper section.panel div.season > a img
+    display: block
+    width: 94px
+    height: 141px
+  &.season.card > a
+    display: none
+  &.episode_list
+    div.card
+      width: 100%
+      overflow: hidden
+      box-sizing: border-box
+      &:nth-child(n+2)
+        margin-top: 30px
+    width: calc(100vw - 20px)
+    max-width: 100%
+    box-sizing: border-box
+  &.episode
+    div.info
+      width: calc(100vw - 20px)
+      max-width: 100%
+      box-sizing: border-box
+      padding: 10px
+    margin-bottom: 0
+    &.closed
+      height: auto
+      div
+        &.expanded_info, &.image div.misc
+          display: none
+        &.info
+          height: auto
+    div
+      &.image
+        float: none
+      &.info
+        float: none
+        div
+          &.title
+            justify-content: flex-start
+            flex-wrap: wrap
+            margin-bottom: 20px
+            > div.wrapper
+              margin-top: 2px
+            div.wrapper
+              padding-right: 0
+              order: 2
+            h3
+              white-space: normal
+              overflow: visible
+              text-overflow: clip
+          &.date
+            width: 100%
+  &.regular_cast ol.people.credits li
+    width: 100%
+
+section.main_column div.regular_cast ol.people.credits li:last-child
+  margin-bottom: 0
+
+div
+  &.regular_cast ol.people.credits + p.show_more
+    margin-top: 0
+  &.episode div.expanded_info
+    width: 100%
+    overflow: hidden
+    box-sizing: border-box
+    flex-wrap: wrap
+    padding: 20px 10px
+    div
+      &.crew
+        order: 2
+        width: 100%
+      &.guest_stars
+        width: 100%
+        margin-bottom: 20px
+  &.expanded_info ol.people li
+    width: 100%
+  &.episode
+    div.episode_images
+      width: 100%
+    ul.episode_images
+      width: 300px
+      height: 90px
+    div.image
+      width: calc(100vw - 40px)
+      height: calc((100vw - 40px) / 1.78)
+      img
+        width: 100%
+        height: 100%
+      a.open
+        width: 100%
+        height: 100%
+        img
+          width: 100%
+          height: 100%
+          display: block
+    ol.people.credits
+      padding-bottom: 0
+
+ol.people.credits li:last-of-type
+  margin-bottom: 0
+
+div.header.large.collection h2
+  font-size: 1.7em
+
+section
+  &.inner_content h3.breadcrumb a.button.edit.upload
+    display: none
+  &.panel.user_images ul.images
+    width: calc(100vw - 40px)
+  &.inner_content ul.images
+    &.backdrops.compact li.card
+      width: 100%
+      div.image_content
+        width: 100%
+        height: auto
+        img
+          width: calc(100vw - 40px)
+          height: calc((100vw - 40px) / 1.78)
+    &.posters.compact li.card
+      box-sizing: border-box
+      width: calc(50vw - 30px)
+      margin-right: 0
+      &:nth-child(n+3)
+        margin-top: 30px
+    &.backdrops.compact li.card:nth-child(n+2)
+      margin-top: 30px
+    &.posters.compact
+      li.card
+        &:nth-of-type(odd)
+          margin-right: 10px
+        &:nth-of-type(even)
+          margin-left: 10px
+        div.image_content
+          width: calc(50vw - 32px)
+          height: calc((50vw - 32px) * 1.5)
+          img
+            width: 100%
+            height: 100%
+      div.info div.meta
+        padding-top: 10px
+        padding-bottom: 0
+    li.card + li.card
+      margin-top: 30px
+    &.compact li.card + li.card
+      margin-top: 0
+
+div
+  &.discussion_container
+    padding-top: 10px
+    tr
+      flex-wrap: wrap
+    table
+      width: 100%
+      td
+        &:first-of-type
+          width: 100%
+          padding-top: 10px
+          display: block
+        &:nth-of-type(2), &:nth-of-type(3)
+          width: auto
+        p
+          font-size: 0.9em
+        &:last-child
+          width: auto
+      tbody td
+        &:last-child p.notify
+          overflow: visible
+          white-space: normal
+        &.subject a.topic
+          max-width: 65vw
+  &.season_wrapper section.panel
+    width: 100%
+
+section.facts div.fantv
+  width: 100%
+
+div.credits div.split:nth-child(even)
+  padding-left: 0
+
+section
+  &.header.small span.flex
+    width: calc(100vw - 40px)
+    &.backdrop
+      > a
+        display: none
+      > span
+        width: 100vw
+        padding-left: 0
+    > span
+      width: calc(100vw - 20px - 58px - 20px)
+  &.inner_content section.header div.episode_number
+    margin-top: 0
+
+div
+  &.header div.inner_content.tight div
+    &.content
+      justify-content: center
+      &.space_between
+        justify-content: center
+    &.meta
+      div.flex
+        width: 100%
+      ul
+        width: 100%
+        padding: 0 20px
+        box-sizing: border-box
+        flex-wrap: wrap
+        justify-content: center
+        li
+          margin-left: 10px
+          margin-right: 10px
+  &.card.v4
+    &.tight div.details
+      padding: 14px
+      width: 100%
+      display: flex
+      align-content: space-between
+      flex-wrap: wrap
+    div.details div.wrapper
+      align-items: flex-start
+    &.tight div.details div
+      &.title
+        flex-wrap: wrap
+        h2
+          display: block
+          font-size: 1em
+          width: calc(100vw - 20px - 94px - 28px - 48px)
+          margin: 0
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
+      &.overview
+        max-height: 3.8em
+        height: 3.8em
+    div.details div.wrapper + div.overview
+      margin-top: 0
+    &.tight div.details div
+      &.overview p
+        display: block
+        font-size: 0.9em
+      &.title span.release_date
+        margin-left: 0
+        font-size: 0.9em
+  &.header div.inner_content
+    &.tight div
+      &.content.backdrop div.about
+        margin-left: 0
+      &.about
+        margin-bottom: 10px
+    div.content span.flex span.inner_flex > a
+      margin-right: 0
+      margin-bottom: 10px
+    &.tight div.content.space_between span.flex span.inner_flex
+      justify-content: center
+      flex-wrap: wrap
+      div.flex
+        justify-content: center
+        width: 100%
+    div
+      &.content.backdrop div.about div.content_wrapper:first-of-type
+        justify-content: center
+      &.about div.content_wrapper:first-of-type h2
+        text-align: center
+        margin-right: 0
+      &.content.backdrop span.flex span.inner_flex a
+        text-align: center
+        width: 100%
+        height: auto
+
+section.panel div.group_dropdown div ul
+  top: -3px
+
+div.block div.inner_content div.content section.episode_selector
+  flex-wrap: wrap
+  width: 100%
+  padding: 6px 20px
+  box-sizing: border-box
+  border-bottom: 1px solid #d7d7d7
+  span
+    &.previous, &.next
+      width: 50%
+
+section
+  &.floating_poster
+    padding-left: 10px
+    width: 26vw
+    padding-right: 20px
+    img
+      width: 100%
+  &.main_body
+    width: calc(74vw)
+    padding-right: 10px
+
+ul.list_of_languages li
+  width: 100%
