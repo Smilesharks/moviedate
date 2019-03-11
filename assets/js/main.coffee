@@ -74,8 +74,8 @@ App =
                     # poster_url = "http://lorempixel.com/output/animals-q-c-640-480-10.jpg"
                 else
                     poster_url = 'http://lorempixel.com/output/animals-q-c-640-480-10.jpg'
-                movie_item = $('<div/>').addClass('col-sm-12 col-xs-12 col-md-6 col-xl-3 movie-item').attr('data-lity', '').attr('href', '#lity-modal')
-                movie_item_inner = $('<div/>').addClass('button poster card text-white d-flex movie-card').attr('data-movie-id', data.id)
+                movie_item = $('<div/>').addClass('col-sm-12 col-xs-12 col-md-6 col-xl-3 movie-item')
+                movie_item_inner = $('<div/>').addClass('button poster card text-white d-flex movie-card').attr('data-movie-id', data.id).attr('data-lity', '').attr('href', '#lity-modal')
                 if show_countdown is true then movie_item_inner.append $('<span/>').addClass('w-100 status').append $('<div/>').attr('data-countdown', data.release_date).addClass('m-2 primary')
                 movie_item_inner.append $('<div/>').addClass('poster__grad')
                 movie_item_inner.append $('<div/>').addClass('poster__img').attr('style', "filter: grayscale(1);background-image:url(#{poster_url})")
