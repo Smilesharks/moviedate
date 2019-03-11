@@ -9,6 +9,7 @@ html, body {
     overflow: hidden; }
 
 #modal-container {
+  background: rgba(0, 0, 0, 0.8);
   position: fixed;
   display: table;
   height: 100%;
@@ -202,39 +203,21 @@ html, body {
             -webkit-animation: modalContentFadeOut 0.5s 0.5 cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
             animation: modalContentFadeOut 0.5s 0.5 cubic-bezier(0.165, 0.84, 0.44, 1) forwards; }
   #modal-container .modal-background {
+    cursor: pointer;
     display: table-cell;
-    background: rgba(0, 0, 0, 0.8);
-    text-align: center;
-    vertical-align: middle; }
-    #modal-container .modal-background .modals {
-      background: white;
-      /* padding: 50px; */
-      display: inline-block;
-      border-radius: 3px;
-      font-weight: 300;
-      position: relative; }
-      #modal-container .modal-background .modals h1, #modal-container .modal-background .modals h2, #modal-container .modal-background .modals h3, #modal-container .modal-background .modals h4 {
-        line-height: 25px;
-        margin-bottom: 15px;
-        color: #181818;
-        text-align: left; }
-      #modal-container .modal-background .modals p {
-        font-size: 18px;
-        line-height: 22px;
-        color: #181818;
-        text-align: left; }
-      #modal-container .modal-background .modals .modal-svg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        border-radius: 3px; }
-        #modal-container .modal-background .modals .modal-svg rect {
-          stroke: #fff;
-          stroke-width: 2px;
-          stroke-dasharray: 778;
-          stroke-dashoffset: 778; }
+    vertical-align: bottom; }
+    #modal-container .modal-background .modals .modal-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 3px; }
+      #modal-container .modal-background .modals .modal-svg rect {
+        stroke: #fff;
+        stroke-width: 2px;
+        stroke-dasharray: 778;
+        stroke-dashoffset: 778; }
 
 .content {
   min-height: 100%;

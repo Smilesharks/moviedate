@@ -5,6 +5,7 @@ $ss = #4fef64
 // *
 //   border 1px solid red
 
+// @import "movie.styl"
 @import "simple-sidebar.styl"
 body
   font-family: 'Anonymous Pro', monospace;
@@ -12,7 +13,9 @@ body
   color #fff
   h1, h2, h3, h4, .h4
     font-family: 'Poppins', sans-serif;
-
+  &.modal-active
+    position: fixed;
+    overflow: hidden;
 a
   color $primary
 
@@ -93,6 +96,7 @@ a
     color $negro !important
 
 .movie-item
+  cursor: pointer
   &:hover
     .poster
       .poster__img
@@ -139,46 +143,76 @@ a
         display inline
       * div
         margin-right 2px
-// #info div
-  // float: left
-  // text-align: center
-  // padding: 10px 0 10px 0
-  // // min-width: 12.5%
-  // &:hover
-  //   background: $secondary
-  //   transition: 0.2s ease-in-out
-  // p
-  //   margin-top: 5px
-  //   max-width: 200px
-
-  // img
-  //   padding: 5px
-  //   width: 200px
-  //   height: 300px
-
+#lity-modal
+  border-radius: 6px
+#cover
+    border-radius: 6px
+    height: calc(100% - 0px);
+    position: absolute;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    max-width: 100%;
+    img
+      filter: grayscale(0)
+  // .backdrop
+  //   background-color: red
+  //   // img
+  //   //   width 100%
 #display
-  // width: 50%
-  // padding: 1em
-  // height: 350px
-  // background: $primary
-  // margin: 50px auto
-  // box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.3), inset 0 -2px 3px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(255, 255, 255, 0.9)
-  transition: 0.2s ease-in-out
-  -moz-transition: 0.2s ease-in-out
-  -webkit-transition: 0.2s ease-in-out
-  img
-    display: block;
-    width: 300px;
-    height: 450px;
-    box-shadow: 0 0 4px rgba(0,0,0,0.2);
-    border-radius: 4px;
+  border-radius: 6px
+  overflow: auto;
+  background: rgba(22, 22, 22, 0.7);
+  padding: 20px;
+  width: 600px;
+  max-width: 100%;
+  height: calc(100% - 0px);
+  border-radius: 6px;
+  max-height: 766px;
+// background:#2E2E2E;
+//   transition: 0.2s ease-in-out
+//   -moz-transition: 0.2s ease-in-out
+//   -webkit-transition: 0.2s ease-in-out
+//   border-radius: 50px 50px 0px 0px;
+//   box-shadow: 0px -5px 33px 2px rgba(0,0,0,0.75);
+//   img
+//     // display: block;
+//     // width: 300px;
+//     // height: 450px;
+//     // box-shadow: 0 0 4px rgba(0,0,0,0.2);
+//     // border-radius: 4px;
   .media-body
-    h2
-      line-height: 2.1rem!important;
-      font-weight: 900!important;
-    h4
-      font-weight: 100!important;
+    .title
+      font-size: 1.4rem;
+      color: #FFFFFF;
+      letter-spacing: 1.9px;
+      text-align: center;
+      line-height: 35px;
+    .tagline
+      font-size: 0.9rem;
+      color: #FFFFFF;
+      text-align: center;
+    .overview
+      font-size: 1rem;
+      line-height: 1.4rem;
+      color: #FFFFFF;
 
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      line-height: 16px;     /* fallback */
+      max-height: 80px;      /* fallback */
+      -webkit-line-clamp: 5; /* number of lines to show */
+      -webkit-box-orient: vertical;
+    .info
+      font-size: 14px;
+      color: #EF544F;
+      // text-align: center;
+      span
+        font-size: 14px;
+        color: #FFFFFF;
+        text-align: center;
 .tmdb
     position: absolute;
     bottom: 0;
@@ -210,7 +244,7 @@ a
       .poster__text
         font-size: 1.3rem
     .poster__img
-      height 65vh
+      height 30rem
   .sidebar-sticky
         padding-top: 3rem
   .tmdb

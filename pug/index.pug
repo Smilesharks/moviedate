@@ -32,7 +32,10 @@ head
 	script(src='/assets/js/jquery.countdown.min.js')
 
 	link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.1/css/all.css' integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr' crossorigin='anonymous')
+	
 	link(href='https://fonts.googleapis.com/css?family=Anonymous+Pro|Poppins' rel='stylesheet')
+	link(href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet")
+	
 	// Global site tag (gtag.js) - Google Analytics
 	script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-89924603-1')
 
@@ -66,12 +69,17 @@ head
 	script.
 		(function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })()
 body
-	#modal-container
+	#lity-modal.lity-hide
+		#cover.col-sm-12.col-xs-12.col-xl-6.px-0
+		#display.col-sm-12.col-xs-12.col-xl-6
+		//- a(href='/image.html' data-lity='' data-lity-target='/image-preview.jpg') Image
+
+	//- #modal-container
 		.modal-background
-			.col-sm-12.col-xs-12.col-xl-6.modals
-				#display.media.my-3
+			#cover.col-sm-12.col-xs-12.col-xl-6.px-0.modals
+			#display.media.col-sm-12.col-xs-12.col-xl-6.modals
 			
-				svg.modal-svg(xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' preserveaspectratio='none')
+				//- svg.modal-svg(xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' preserveaspectratio='none')
 					rect(x='0' y='0' fill='none' width='226' height='162' rx='3' ry='3')
 
 	.container.d-flex
@@ -80,6 +88,8 @@ body
 		.row.content
 			include sidebar.pug
 			main.ml-sm-auto.col-md-10.col-lg-10.role#page-content-wrapper
+				//- include movie.pug
+			
 				// Movie Options
 				.container.row
 				.container
@@ -95,3 +105,8 @@ script(type='text/javascript').
 				$("#wrapper").toggleClass("toggled");
 		}
 	});
+script(type='text/javascript').
+	 $(window).resize(function() {
+		 $(window).height(); // New height
+		 $(window).width(); // New width
+	 });

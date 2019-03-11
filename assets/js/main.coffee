@@ -6,7 +6,9 @@ App =
             base_uri: 'https://api.themoviedb.org/3/'
             images_uri: 'http://image.tmdb.org/t/p'
             timeout: 5000
-            image_size: '/w500'
+            image_size: '/w342'
+            backdrop_size: '/w780'
+            no_api: 'http://lorempixel.com/output/animals-q-c-640-480-10.jpg'
         @set_handlers()
         @load_upcoming()
 
@@ -69,9 +71,10 @@ App =
                     video_link = ''
                 if movie.poster_path?
                     poster_url = "#{@tmdb.images_uri}#{@tmdb.image_size}#{data.poster_path}"
+                    # poster_url = "http://lorempixel.com/output/animals-q-c-640-480-10.jpg"
                 else
                     poster_url = 'http://lorempixel.com/output/animals-q-c-640-480-10.jpg'
-                movie_item = $('<div/>').addClass('col-sm-12 col-xs-12 col-md-6 col-xl-3 movie-item')
+                movie_item = $('<div/>').addClass('col-sm-12 col-xs-12 col-md-6 col-xl-3 movie-item').attr('data-lity', '').attr('href', '#lity-modal')
                 movie_item_inner = $('<div/>').addClass('button poster card text-white d-flex movie-card').attr('data-movie-id', data.id)
                 if show_countdown is true then movie_item_inner.append $('<span/>').addClass('w-100 status').append $('<div/>').attr('data-countdown', data.release_date).addClass('m-2 primary')
                 movie_item_inner.append $('<div/>').addClass('poster__grad')
@@ -104,7 +107,8 @@ App =
                 else
                     video_link = ''
                 if movie.poster_path?
-                    poster_url = "#{@tmdb.images_uri}#{@tmdb.image_size}#{data.poster_path}"
+                    # poster_url = "#{@tmdb.images_uri}#{@tmdb.image_size}#{data.poster_path}"
+                    poster_url = "http://lorempixel.com/output/animals-q-c-640-480-10.jpg"
                 else
                     poster_url = 'http://lorempixel.com/output/animals-q-c-640-480-10.jpg'
                 movie_item = $('<div/>').addClass('col-sm-12 col-xs-12 col-md-6 col-xl-3 movie-item')
@@ -129,6 +133,7 @@ App =
 
     load_movie_info: (movie_id) ->
         $('#display').empty()
+        $('#cover').empty()
         api_call_params = {}
         api_call_params.api_key = @tmdb.api_key
         api_call_params.language = 'es-US'
@@ -140,20 +145,27 @@ App =
             else
                 video_link = ''
             if data.poster_path?
-                poster_url = "#{@tmdb.images_uri}#{@tmdb.image_size}#{data.poster_path}"
+                backdrop_path = "#{@tmdb.images_uri}#{@tmdb.backdrop_size}#{data.backdrop_path}"
+                # backdrop_path = "http://lorempixel.com/output/animals-q-c-640-480-10.jpg"
             else
                 poster_url = 'http://lorempixel.com/output/animals-q-c-640-480-10.jpg'
-            image = $('<div/>').append $('<img/>').addClass('mr-3').attr('src', poster_url)
-            $('#display').append image.addClass('mr-3')
+            image = $('<div/>').append $('<img/>').addClass('image').attr('src', backdrop_path)
             info = $('<div/>').addClass('media-body')
-            info.append $('<h2/>').addClass('mt-4').text "#{data.title}"
-            info.append $('<h4/>').addClass('bingo').text "#{data.tagline}"
-            info.append $('<h5/>').addClass('bingo').text "Release date: #{data.release_date}"
-            info.append $('<p/>').addClass('bingo').text "Description: #{data.overview}"
-            info.append $('<p/>').addClass('bingo').text "Duration: #{data.runtime} min"
+            info.append $('<h2/>').addClass('title pt-3').text "#{data.title}"
+            info.append $('<div/>').addClass('tagline').text "#{data.tagline}"
+            info.append $('<div/>').addClass('info').text "Popularity:"
+            info.append $('<div/>').addClass('popularity').text "#{data.popularity}"
+            info.append $('<div/>').addClass('info').text "Release date:"
+            info.append $('<div/>').addClass('release').text "#{data.release_date}"
+            info.append $('<div/>').addClass('info').text "Runtime:"
+            info.append $('<div/>').addClass('runtime').text "#{data.runtime} min"
+            info.append $('<p/>').addClass('overview').text "Overview: #{data.overview}"
+            # $('#cover').append $('<button/>').addClass('close mr-2 mt-2').attr('data-dismiss', 'modal').attr('aria-label', 'Close')
+            # $('.close').append $('<i/>').addClass('fas fa-times-circle')
+            $('#cover').attr('style', "background-image:url(#{backdrop_path})")
             $('#display').append info
-            $('#modal-container').removeAttr('class').addClass('one')
-            $('body').addClass('modal-active')
+            # $('#modal-container').removeAttr('class').addClass('one')
+            # $('body').addClass('modal-active')
 
 
     load_countdown: () ->
