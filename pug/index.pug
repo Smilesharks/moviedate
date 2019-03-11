@@ -59,7 +59,12 @@ head
 	script.
 		(function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })()
 body
-	#modal-container
+	#lity-modal.lity-hide
+		#cover.col-sm-12.col-xs-12.col-xl-6.px-0
+		#display.col-sm-12.col-xs-12.col-xl-6
+		//- a(href='/image.html' data-lity='' data-lity-target='/image-preview.jpg') Image
+
+	//- #modal-container
 		.modal-background
 			#cover.col-sm-12.col-xs-12.col-xl-6.px-0.modals
 			#display.media.col-sm-12.col-xs-12.col-xl-6.modals
@@ -73,6 +78,8 @@ body
 		.row.content
 			include sidebar.pug
 			main.ml-sm-auto.col-md-10.col-lg-10.role#page-content-wrapper
+				//- include movie.pug
+			
 				// Movie Options
 				.container.row
 				.container
