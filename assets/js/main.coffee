@@ -107,8 +107,8 @@ App =
                 else
                     video_link = ''
                 if movie.poster_path?
-                    # poster_url = "#{@tmdb.images_uri}#{@tmdb.image_size}#{data.poster_path}"
-                    poster_url = "http://lorempixel.com/output/animals-q-c-640-480-10.jpg"
+                    poster_url = "#{@tmdb.images_uri}#{@tmdb.image_size}#{data.poster_path}"
+                    # poster_url = "http://lorempixel.com/output/animals-q-c-640-480-10.jpg"
                 else
                     poster_url = 'http://lorempixel.com/output/animals-q-c-640-480-10.jpg'
                 movie_item = $('<div/>').addClass('col-sm-12 col-xs-12 col-md-6 col-xl-3 movie-item')
@@ -145,8 +145,8 @@ App =
             else
                 video_link = ''
             if data.poster_path?
-                backdrop_path = "#{@tmdb.images_uri}#{@tmdb.backdrop_size}#{data.backdrop_path}"
-                # backdrop_path = "http://lorempixel.com/output/animals-q-c-640-480-10.jpg"
+                # backdrop_path = "#{@tmdb.images_uri}#{@tmdb.backdrop_size}#{data.backdrop_path}"
+                backdrop_path = "http://lorempixel.com/output/animals-q-c-640-480-10.jpg"
             else
                 poster_url = 'http://lorempixel.com/output/animals-q-c-640-480-10.jpg'
             image = $('<div/>').append $('<img/>').addClass('image').attr('src', backdrop_path)
