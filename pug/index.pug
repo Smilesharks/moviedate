@@ -10,14 +10,14 @@ head
 	meta(name='Keywords' content='movie, movies')
 	meta(property='og:url' content='https://moviedates.info/')
 	meta(property='og:type' content='article')
-	meta(property='og:title' content='MovieDate - Premiere Reminder')
+	meta(property='og:title' content='MovieDates - Premiere Reminder')
 	meta(property='og:description' content='Reminder of how much time is left for the premiere of your next favorite movie.')
 	meta(property='og:image' content='assets/img/og.jpg')
 	
-	link(rel='icon' href='/assets/img/fav/favicon.ico?v=1.1')
+	link(rel='icon' type='image/x-icon' href='/assets/img/fav/favicon.ico?v=1.1')
+	link(rel='icon' type='image/png' sizes='16x16' href='/assets/img/fav/favicon-16x16.png')
 	link(rel='icon' type='image/png' sizes='32x32' href='/assets/img/fav/favicon-32x32.png')
 	link(rel='icon' type='image/png' sizes='96x96' href='/assets/img/fav/favicon-96x96.png')
-	link(rel='icon' type='image/png' sizes='16x16' href='/assets/img/fav/favicon-16x16.png')
 
 	
 	link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css' integrity='sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS' crossorigin='anonymous')
@@ -98,9 +98,17 @@ body
 			include sidebar.pug
 			main.ml-sm-auto.col-md-10.col-lg-10.role#page-content-wrapper
 				//- include movie.pug
-			
 				// Movie Options
-				.container.row
+				#mobile.col-12
+					.row.mb-3
+						.col-6
+							a.button.btn.btn-outline-primary.w-100.mr-2(href='#')(data-action='upcoming')
+								img.invert(src='/assets/img/film.svg' width='24' height='24' alt='')
+								|               Upcoming 
+						.col-6
+							a.button.btn.btn-outline-primary.w-100(href='#')(data-action='nowplaying')
+								img.invert(src='/assets/img/ticket.svg' width='24' height='24' alt='')
+								|               Now Playing
 				.container
 					#info.row
 script(type='text/javascript').

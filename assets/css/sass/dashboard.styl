@@ -28,7 +28,8 @@ a
   vertical-align: text-bottom
 
 // Sidebar
-
+#mobile
+  display: none;
 .sidebar
   position: fixed
   top: 0
@@ -84,6 +85,10 @@ a
 .btn-primary, .primary
   background-color $primary
   border none
+.btn-outline-primary
+  // background-color $primary
+  color #fff
+  border-color: $primary
 .btn-secondary .secondary
   background-color $secondary
   border none
@@ -223,7 +228,7 @@ a
 
 @media (max-width: 768px)
   .role
-    padding-top: 175px !important
+    padding-top: 155px !important
   #search
     display none
   .modals
@@ -235,17 +240,23 @@ a
           width auto !important;
       iframe
         display: none;
+  #mobile
+    display: block;
   .poster
     .status
       .primary
         padding: 0.5rem;
+        background-color: $negro
+        color #fff
     .poster__info
       .poster__title
         font-size: 1.9rem
+        margin-bottom: 0.3rem
       .poster__text
-        font-size: 1.3rem
+        font-size: 1.1rem
     .poster__img
-      height 30rem
+      filter: grayscale(0)!important;
+      height 25rem
   .sidebar-sticky
         padding-top: 3rem
   .tmdb
