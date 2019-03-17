@@ -8,7 +8,7 @@ App =
             timeout: 5000
             image_size: '/w342'
             backdrop_size: '/w780'
-            no_api: 'http://lorempixel.com/output/animals-q-c-640-480-10.jpg'
+            no_api: 'https://i.imgur.com/wBM0IWa.jpg'
         @set_handlers()
         @load_upcoming()
 
@@ -71,9 +71,9 @@ App =
                     video_link = ''
                 if movie.poster_path?
                     poster_url = "#{@tmdb.images_uri}#{@tmdb.image_size}#{data.poster_path}"
-                    # poster_url = "http://lorempixel.com/output/animals-q-c-640-480-10.jpg"
+                    # poster_url = "https://i.imgur.com/wBM0IWa.jpg"
                 else
-                    poster_url = 'http://lorempixel.com/output/animals-q-c-640-480-10.jpg'
+                    poster_url = 'https://i.imgur.com/wBM0IWa.jpg'
                 movie_item = $('<div/>').addClass('col-sm-12 col-xs-12 col-md-6 col-xl-3 movie-item')
                 movie_item_inner = $('<div/>').addClass('button poster card text-white d-flex movie-card').attr('data-movie-id', data.id).attr('data-lity', '').attr('href', '#lity-modal')
                 if show_countdown is true then movie_item_inner.append $('<span/>').addClass('w-100 status').append $('<div/>').attr('data-countdown', data.release_date).addClass('m-2 primary')
@@ -108,7 +108,7 @@ App =
                     video_link = ''
                 if movie.poster_path?
                     poster_url = "#{@tmdb.images_uri}#{@tmdb.image_size}#{data.poster_path}"
-                    # poster_url = "http://lorempixel.com/output/animals-q-c-640-480-10.jpg"
+                    # poster_url = "https://i.imgur.com/wBM0IWa.jpg"
                 else
                     poster_url = 'https://i.imgur.com/wBM0IWa.jpg'
                 movie_item = $('<div/>').addClass('col-sm-12 col-xs-12 col-md-6 col-xl-3 movie-item')
@@ -145,10 +145,10 @@ App =
             else
                 video_link = ''
             if data.poster_path?
-                # backdrop_path = "#{@tmdb.images_uri}#{@tmdb.backdrop_size}#{data.backdrop_path}"
-                backdrop_path = "http://lorempixel.com/output/animals-q-c-640-480-10.jpg"
+                backdrop_path = "#{@tmdb.images_uri}#{@tmdb.backdrop_size}#{data.backdrop_path}"
+                # backdrop_path = "https://i.imgur.com/wBM0IWa.jpg"
             else
-                poster_url = 'http://lorempixel.com/output/animals-q-c-640-480-10.jpg'
+                poster_url = 'https://i.imgur.com/wBM0IWa.jpg'
             image = $('<div/>').append $('<img/>').addClass('image').attr('src', backdrop_path)
             info = $('<div/>').addClass('media-body')
             info.append $('<h2/>').addClass('title pt-3').text "#{data.title}"
