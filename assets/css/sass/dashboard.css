@@ -217,8 +217,8 @@ a.nav-link {
   max-width: 100%;
 }
 #cover img {
-  -webkit-filter: grayscale(0);
-  filter: grayscale(0);
+  -webkit-filter: grayscale(0.5);
+  filter: grayscale(0.5);
 }
 #display {
   border-radius: 6px;

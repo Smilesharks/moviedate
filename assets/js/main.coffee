@@ -78,7 +78,7 @@ App =
                 movie_item_inner = $('<div/>').addClass('button poster card text-white d-flex movie-card').attr('data-movie-id', data.id).attr('data-lity', '').attr('href', '#lity-modal')
                 if show_countdown is true then movie_item_inner.append $('<span/>').addClass('w-100 status').append $('<div/>').attr('data-countdown', data.release_date).addClass('m-2 primary')
                 movie_item_inner.append $('<div/>').addClass('poster__grad')
-                movie_item_inner.append $('<div/>').addClass('poster__img').attr('style', "filter: grayscale(1);background-image:url(#{poster_url})")
+                movie_item_inner.append $('<div/>').addClass('poster__img').attr('style', "filter: grayscale(0.8);background-image:url(#{poster_url})")
                 poster_info =  $('<div/>').addClass('poster__info align-self-end w-100 p-2')
                 poster_info.append $('<h3/>').addClass('h4 poster__title card-title').text data.title
                 poster_info.append $('<p/>').addClass('poster__text m-0').text data.release_date
@@ -115,7 +115,7 @@ App =
                 movie_item_inner = $('<div/>').addClass('button poster card text-white d-flex movie-card').attr('data-movie-id', data.id)
                 if show_countdown is true then movie_item_inner.append $('<span/>').addClass('w-100 status').append $('<div/>').attr('data-countdown', data.release_date).addClass('m-2 primary')
                 movie_item_inner.append $('<div/>').addClass('poster__grad')
-                movie_item_inner.append $('<div/>').addClass('poster__img').attr('style', "filter: grayscale(1);background-image:url(#{poster_url})")
+                movie_item_inner.append $('<div/>').addClass('poster__img').attr('style', "filter: grayscale(0.8);background-image:url(#{poster_url})")
                 poster_info =  $('<div/>').addClass('poster__info align-self-end w-100 p-2')
                 poster_info.append $('<h3/>').addClass('h4 poster__title card-title').text data.title
                 poster_info.append $('<p/>').addClass('poster__text m-0').text "User Score: #{data.vote_average}"
